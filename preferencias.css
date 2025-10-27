@@ -1,0 +1,371 @@
+/* ===========================================
+   PÁGINA PREFERENCIAS DE NOTIFICACIONES
+   =========================================== */
+
+/* ===========================================
+   HEADER PREFERENCIAS
+   =========================================== */
+
+.header-preferencias {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gris-claro);
+}
+
+.header-preferencias h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 8px;
+}
+
+.subtitulo-preferencias {
+    font-size: 14px;
+    color: var(--gris-medio);
+    font-weight: 500;
+}
+
+/* ===========================================
+   FORMULARIO PREFERENCIAS
+   =========================================== */
+
+.formulario-preferencias {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ===========================================
+   SECCIONES DE NOTIFICACIÓN
+   =========================================== */
+
+.seccion-notificacion {
+    background: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.seccion-notificacion:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-notificacion.deshabilitada {
+    opacity: 0.6;
+    background: var(--gris-suave);
+}
+
+.seccion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.seccion-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--negro);
+    margin: 0;
+}
+
+/* ===========================================
+   SWITCH TOGGLE
+   =========================================== */
+
+.switch-container {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--gris-claro);
+    border: 2px solid var(--negro);
+    border-radius: 26px;
+    transition: all 0.4s ease;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    top: 2px;
+    background-color: var(--negro);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.switch input:checked + .slider {
+    background-color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(24px);
+    background-color: var(--blanco);
+}
+
+.switch:hover .slider {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ===========================================
+   OPCIONES CONTAINER
+   =========================================== */
+
+.opciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opcion-item {
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.opcion-item:hover {
+    background: var(--gris-suave);
+    margin: 0 -15px;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* ===========================================
+   CHECKBOX PERSONALIZADO
+   =========================================== */
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--negro);
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--negro);
+    border-radius: 3px;
+    background: var(--blanco);
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkmark {
+    background: var(--negro);
+    border-color: var(--negro);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--blanco);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox-wrapper:hover .checkmark {
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.checkbox-wrapper input[type="checkbox"]:disabled + .checkmark {
+    background: var(--gris-claro);
+    border-color: var(--gris-claro);
+    cursor: not-allowed;
+}
+
+.checkbox-wrapper input[type="checkbox"]:disabled ~ .checkbox-texto {
+    color: var(--gris-medio);
+    cursor: not-allowed;
+}
+
+.checkbox-texto {
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ===========================================
+   BOTÓN GUARDAR
+   =========================================== */
+
+.boton-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid var(--gris-claro);
+}
+
+.btn-guardar {
+    background: var(--negro);
+    color: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-guardar:hover {
+    background: var(--blanco);
+    color: var(--negro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-guardar:active {
+    transform: scale(0.95);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .seccion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .switch-container {
+        align-self: flex-end;
+    }
+
+    .header-preferencias h1 {
+        font-size: 22px;
+    }
+
+    .seccion-notificacion {
+        padding: 20px;
+    }
+
+    .seccion-titulo {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion-notificacion {
+        padding: 15px;
+    }
+
+    .checkbox-texto {
+        font-size: 13px;
+    }
+
+    .btn-guardar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .switch {
+        width: 45px;
+        height: 24px;
+    }
+
+    .slider:before {
+        height: 16px;
+        width: 16px;
+    }
+
+    .switch input:checked + .slider:before {
+        transform: translateX(21px);
+    }
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+
+.seccion-notificacion {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.seccion-notificacion:nth-child(1) { animation-delay: 0.1s; }
+.seccion-notificacion:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación para cuando se deshabilita una sección */
+.seccion-notificacion.deshabilitada .opciones-container {
+    animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+/* Efecto de focus en switches */
+.switch input:focus + .slider {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* Estados hover para elementos interactivos */
+.seccion-notificacion:hover .seccion-titulo {
+    color: var(--azul-principal);
+}
+
+.checkbox-wrapper:hover .checkbox-texto {
+    color: var(--azul-principal);
+}

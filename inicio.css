@@ -1,0 +1,390 @@
+/* Variables */
+:root {
+    --azul-principal: #2563eb;
+    --azul-oscuro: #1e40af;
+    --azul-claro: #dbeafe;
+    --morado: #7c3aed;
+    --morado-oscuro: #5b21b6;
+    --blanco: #ffffff;
+    --gris-suave: #f8fafc;
+    --gris-medio: #64748b;
+    --gris-claro: #e2e8f0;
+    --negro: #1e293b;
+}
+
+/* Reset */
+.contenido-principal {
+    font-family: 'Inter', sans-serif;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sección Hero Banner - AGRANDADA */
+.seccion-hero {
+    background: var(--gris-suave);
+    padding: 60px 0; /* Aumenté el padding */
+    border-bottom: 2px solid var(--gris-claro);
+}
+
+.hero-banner {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Ya tienes más espacio para la imagen */
+    gap: 40px;
+    align-items: center;
+    min-height: 450px; /* Aumenté la altura mínima de 300px a 450px */
+    background: var(--blanco);
+    border: 2px solid var(--gris-claro);
+    border-radius: 12px;
+    padding: 60px; /* Aumenté el padding interno de 40px a 60px */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen más grande */
+.imagen-hero {
+    width: 100%;
+    max-width: 600px; /* Aumenté de 400px a 600px */
+    height: auto;
+    min-height: 300px; /* Agregué altura mínima */
+    border-radius: 12px; /* Aumenté el border-radius */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    object-fit: cover; /* Para que mantenga proporciones */
+}
+
+/* Texto del banner - ajustado para imagen más grande */
+.texto-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--negro);
+    padding: 60px 30px; /* Aumenté el padding vertical */
+    background: var(--blanco);
+    min-height: 250px; /* Agregué altura mínima para balancear */
+}
+
+.texto-banner h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px; /* Aumenté de 36px a 42px */
+    font-weight: 700;
+    color: var(--negro);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Etiqueta de imagen - más grande */
+.etiqueta-imagen {
+    position: absolute;
+    top: -15px; /* Moví más arriba */
+    right: 15px;
+    background: var(--azul-principal);
+    color: var(--blanco);
+    padding: 8px 16px; /* Aumenté el padding */
+    border-radius: 6px; /* Aumenté el border-radius */
+    font-size: 14px; /* Aumenté de 12px a 14px */
+    font-weight: 600; /* Aumenté el peso de la fuente */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); /* Agregué sombra */
+}
+
+/* Responsive para imagen agrandada */
+@media (max-width: 1024px) {
+    .hero-banner {
+        min-height: 400px;
+        padding: 40px;
+    }
+    
+    .imagen-hero {
+        max-width: 500px;
+        min-height: 250px;
+    }
+    
+    .texto-banner h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .imagen-hero {
+        max-width: 100%;
+        min-height: 200px;
+    }
+    
+    .texto-banner {
+        padding: 40px 20px;
+        min-height: 180px;
+    }
+    
+    .texto-banner h1 {
+        font-size: 28px;
+    }
+}
+
+/* Sección de Carreras */
+.seccion-carreras {
+    padding: 60px 0;
+    background: var(--blanco);
+}
+
+.titulo-seccion {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 40px;
+}
+
+.grid-carreras {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.carrera-card {
+    background: var(--blanco);
+    border: 2px solid var(--gris-claro);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.carrera-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--azul-principal);
+}
+
+.carrera-imagen {
+    width: 100%;
+    height: 180px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: relative;
+    background: var(--gris-suave);
+}
+
+.carrera-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carrera-card:hover .carrera-imagen img {
+    transform: scale(1.05);
+}
+
+.carrera-titulo {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--negro);
+    margin: 0;
+}
+
+/* Sección de Estudiantes */
+.seccion-estudiantes {
+    padding: 60px 0;
+    background: var(--gris-suave);
+}
+
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.curso-card {
+    background: var(--blanco);
+    border: 2px solid var(--gris-claro);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.curso-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-color: var(--morado);
+}
+
+.curso-imagen {
+    width: 100%;
+    height: 120px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    position: relative;
+    background: var(--gris-suave);
+}
+
+.curso-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.curso-card:hover .curso-imagen img {
+    transform: scale(1.1);
+}
+
+
+.curso-titulo {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--negro);
+    margin: 0;
+}
+
+/* Footer */
+.footer-principal {
+    background: var(--negro);
+    color: var(--blanco);
+    padding: 60px 0 30px;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-columna h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--blanco);
+}
+
+.footer-columna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-columna ul li {
+    margin-bottom: 12px;
+}
+
+.footer-columna ul li a {
+    color: var(--gris-medio);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-columna ul li a:hover {
+    color: var(--azul-claro);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .grid-cursos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .grid-carreras {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-cursos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .texto-banner h1 {
+        font-size: 24px;
+    }
+    
+    .grid-cursos {
+        grid-template-columns: 1fr;
+    }
+}
+/* Botón de registrarse */
+.boton-registrarse {
+    background: transparent;
+    color: var(--azul-principal);
+    border: 2px solid var(--azul-principal);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.boton-registrarse:hover {
+    background: var(--azul-principal);
+    color: var(--blanco);
+    transform: translateY(-1px);
+}
+
+/* Responsive para los botones */
+@media (max-width: 1024px) {
+    .boton-registrarse {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .boton-registrarse {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .boton-registrarse {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+}
+
+/* Para pantallas muy pequeñas, mostrar solo "Reg" */
+@media (max-width: 360px) {
+    .boton-registrarse {
+        padding: 6px 8px;
+    }
+    
+    .boton-registrarse::after {
+        content: "Reg";
+    }
+    
+    .boton-registrarse {
+        font-size: 0;
+    }
+}

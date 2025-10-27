@@ -1,0 +1,459 @@
+/* ===========================================
+   PÁGINA CERTIFICADOS
+   =========================================== */
+
+:root {
+    --verde-completado: #16a34a;
+    --verde-progreso: #22c55e;
+    --morado-boton: #8b5cf6;
+    --gris-claro: #e5e7eb;
+    --gris-medio: #6b7280;
+    --gris-oscuro: #374151;
+    --gris-suave: #f9fafb;
+    --negro: #111827;
+    --blanco: #ffffff;
+    --azul-principal: #2563eb;
+}
+
+.main-certificados {
+    min-height: calc(100vh - 200px);
+    padding: 40px 0 80px;
+    background: var(--blanco);
+}
+
+/* ===========================================
+   HEADER DE LA PÁGINA
+   =========================================== */
+
+.header-certificados {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-certificados h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--negro);
+    margin: 0;
+}
+
+/* ===========================================
+   LÍNEA SEPARADORA
+   =========================================== */
+
+.linea-separadora {
+    width: 100%;
+    height: 2px;
+    background: var(--negro);
+    margin: 30px 0 40px;
+}
+
+/* ===========================================
+   GRID DE CERTIFICADOS
+   =========================================== */
+
+.grid-certificados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* ===========================================
+   TARJETAS DE CERTIFICADO
+   =========================================== */
+
+.certificado-card {
+    background: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificado-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--azul-principal);
+}
+
+/* ===========================================
+   TÍTULO DEL CERTIFICADO
+   =========================================== */
+
+.titulo-certificado {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.titulo-certificado h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--negro);
+    margin: 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ===========================================
+   IMAGEN DEL CERTIFICADO
+   =========================================== */
+
+.imagen-certificado {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.imagen-certificado-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificado-card:hover .imagen-certificado-real {
+    transform: scale(1.05);
+}
+
+/* Fallback si la imagen no carga */
+.imagen-certificado-real:not([src]),
+.imagen-certificado-real[src=""] {
+    background: var(--gris-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gris-medio);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.imagen-certificado-real:not([src])::before,
+.imagen-certificado-real[src=""]::before {
+    content: "Imagen del certificado";
+}
+
+/* ===========================================
+   BARRA DE PROGRESO
+   =========================================== */
+
+.progreso-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+    background: var(--gris-claro);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progreso-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: all 0.6s ease;
+    position: relative;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+/* Estados de progreso */
+.progreso-fill.completado {
+    background: var(--verde-completado);
+}
+
+.progreso-fill.progreso {
+    background: var(--verde-progreso);
+}
+
+.progreso-fill.inicio {
+    background: var(--verde-progreso);
+}
+
+/* Animación de llenado */
+.progreso-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.porcentaje-progreso {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--negro);
+    text-align: right;
+}
+
+/* ===========================================
+   BOTONES OBTENER
+   =========================================== */
+
+.btn-obtener {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 80px;
+}
+
+/* Botón disponible (100%) */
+.btn-obtener.disponible {
+    background: var(--morado-boton);
+    color: var(--blanco);
+    border: 2px solid var(--morado-boton);
+}
+
+.btn-obtener.disponible:hover {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.btn-obtener.disponible:active {
+    transform: translateY(0);
+}
+
+/* Botón bloqueado (menos del 100%) */
+.btn-obtener.bloqueado {
+    background: var(--gris-claro);
+    color: var(--gris-medio);
+    border: 2px solid var(--gris-claro);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-obtener.bloqueado:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===========================================
+   MENSAJE DE DESCARGA
+   =========================================== */
+
+.mensaje-descarga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.mensaje-descarga.oculto {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.contenido-mensaje {
+    background: var(--blanco);
+    padding: 40px 60px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenido-mensaje p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--negro);
+    margin: 0;
+}
+
+/* ===========================================
+   SPINNER DE CARGA
+   =========================================== */
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--gris-claro);
+    border-top: 4px solid var(--morado-boton);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .main-certificados {
+        padding: 20px 0 60px;
+    }
+
+    .header-certificados h1 {
+        font-size: 28px;
+    }
+
+    .grid-certificados {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .imagen-certificado {
+        height: 160px;
+    }
+
+    .certificado-card {
+        padding: 16px;
+    }
+
+    .contenido-mensaje {
+        padding: 30px 40px;
+        margin: 20px;
+    }
+
+    .contenido-mensaje p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-certificados h1 {
+        font-size: 24px;
+    }
+
+    .grid-certificados {
+        gap: 16px;
+    }
+
+    .imagen-certificado {
+        height: 140px;
+    }
+
+    .certificado-card {
+        padding: 12px;
+    }
+
+    .titulo-certificado h3 {
+        font-size: 14px;
+    }
+
+    .contenido-mensaje {
+        padding: 20px 30px;
+        margin: 10px;
+    }
+
+    .contenido-mensaje p {
+        font-size: 14px;
+    }
+
+    .spinner {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES DE ENTRADA
+   =========================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.certificado-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.certificado-card:nth-child(1) { animation-delay: 0.1s; }
+.certificado-card:nth-child(2) { animation-delay: 0.2s; }
+.certificado-card:nth-child(3) { animation-delay: 0.3s; }
+
+.header-certificados {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+/* ===========================================
+   MEJORAS VISUALES
+   =========================================== */
+
+.certificado-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Indicador visual para certificado disponible */
+.progreso-fill.completado::before {
+    content: '✓';
+    position: absolute;
+    right: 4px;
+    top: -2px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Efecto de pulso en botón disponible */
+.btn-obtener.disponible {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}

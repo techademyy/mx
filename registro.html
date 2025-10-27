@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - TechAdemy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+
+    <header class="header-principal">
+        <div class="contenedor-header">
+            <!-- Logo y marca -->
+            <a href="index.html" class="logo-marca">
+                <img src="img/logo.jpg" alt="TechAdemy Logo" class="logo-header">
+                <span class="nombre-marca">TechAdemy</span>
+            </a>
+
+            <!-- Navegación principal -->
+            <nav class="navegacion-principal">
+                <ul class="nav-enlaces">
+                    <li class="nav-item">
+                        <a href="catalogo.html" class="nav-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                            <span>Explorar cursos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="nosotros.html" class="nav-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span>Nosotros</span>
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            <span>Mis cursos</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Barra de búsqueda -->
+                <div class="barra-busqueda">
+                    <svg class="icono-busqueda" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="input-busqueda" placeholder="Buscar cursos...">
+                </div>
+            </nav>
+
+            <!-- Botones de acción -->
+            <div class="botones-accion">
+                <!-- Ubicación -->
+                <a href="#" class="boton-icono" title="Ubicación">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </a>
+
+                <!-- Carrito -->
+                <a href="login.html" class="boton-icono" title="Carrito">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+
+                <!-- Iniciar sesión -->
+                <a href="login.html" class="boton-iniciar-sesion">
+                    Iniciar sesión
+                </a>
+
+                <!-- Registrarse -->
+                <a href="registro.html" class="btn-registrarse">
+                    Registrarse
+                </a>
+            </div>
+
+            <!-- Menú hamburguesa para móvil -->
+            <button class="menu-hamburguesa">
+                <span class="linea-hamburguesa"></span>
+                <span class="linea-hamburguesa"></span>
+                <span class="linea-hamburguesa"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-registro">
+        <div class="contenedor-registro">
+
+            <!-- ===============================
+                 Formulario de registro
+            ================================ -->
+            <div class="formulario-registro">
+                <div class="header-formulario">
+                    <h1>Crear cuenta</h1>
+                    <p>Únete a TechAdemy y comienza tu viaje de aprendizaje</p>
+                </div>
+
+                <form class="form-registro" action="login.html" method="POST">
+
+                    <!-- Nombre completo -->
+                    <div class="grupo-input">
+                        <label for="nombre_completo" class="label-input">Nombre completo</label>
+                        <input type="text" id="nombre_completo" name="nombre_completo" class="input-campo" placeholder="Ingresa tu nombre completo" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="grupo-input">
+                        <label for="email" class="label-input">Correo electrónico</label>
+                        <input type="email" id="email" name="email" class="input-campo" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="grupo-input">
+                        <label for="password" class="label-input">Contraseña</label>
+                        <div class="input-password-container">
+                            <input type="password" id="password" name="password" class="input-campo input-password" placeholder="Mínimo 8 caracteres" required minlength="8">
+                            <button type="button" class="btn-mostrar-password" onclick="togglePassword('password')">
+                                <svg class="icono-ojo" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Confirmar contraseña -->
+                    <div class="grupo-input">
+                        <label for="confirmar_password" class="label-input">Confirmar contraseña</label>
+                        <div class="input-password-container">
+                            <input type="password" id="confirmar_password" name="confirmar_password" class="input-campo input-password" placeholder="Confirma tu contraseña" required minlength="8">
+                            <button type="button" class="btn-mostrar-password" onclick="togglePassword('confirmar_password')">
+                                <svg class="icono-ojo" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Términos y condiciones -->
+                    <div class="grupo-checkbox">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="terminos" required>
+                            <span class="checkmark"></span>
+                            <span class="texto-checkbox">
+                                Acepto los <a href="terminos.html" class="enlace-terminos">términos y condiciones</a> 
+                                y la <a href="privacidad.html" class="enlace-terminos">política de privacidad</a>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Botón de registro -->
+                    <button type="submit" class="btn-registrar">
+                        <span>Crear cuenta</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14m-7-7 7 7-7 7"/>
+                        </svg>
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="divider"><span>o continúa con</span></div>
+
+                    <!-- Botones de redes sociales -->
+                    <div class="botones-sociales">
+                        <button type="button" class="btn-social btn-google">Google</button>
+                        <button type="button" class="btn-social btn-facebook">Facebook</button>
+                    </div>
+
+                    <!-- Link a iniciar sesión -->
+                    <div class="enlace-login">
+                        <p>¿Ya tienes una cuenta? <a href="login.html" class="link-login">Iniciar sesión</a></p>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- ===============================
+                 Imagen lateral / información adicional
+            ================================ -->
+            <div class="imagen-lateral">
+                <div class="contenido-imagen">
+                    <h2>Comienza tu viaje de aprendizaje</h2>
+                    <p>Únete a miles de estudiantes que ya están transformando sus carreras con TechAdemy</p>
+                    <div class="estadisticas-mini">
+                        <div class="stat"><span class="numero">10M+</span><span class="texto">Estudiantes</span></div>
+                        <div class="stat"><span class="numero">50K+</span><span class="texto">Cursos</span></div>
+                        <div class="stat"><span class="numero">95%</span><span class="texto">Satisfacción</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+      <footer class="footer">
+        <div class="contenedor">
+            <div class="footer-contenido">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <img src="img/logotexto.png" alt="TechAdemy Logo" class="logo-footer">
+                </div>
+
+                <!-- Enlaces Izquierda -->
+                <div class="footer-enlaces-izq">
+                    <a href="#" class="footer-link">Términos y Condiciones</a>
+                    <a href="#" class="footer-link">Política de Privacidad</a>
+                    <a href="#" class="footer-link">Soporte</a>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="footer-redes">
+                    <a href="#" class="red-social" aria-label="TikTok">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Twitter/X">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Enlaces Derecha -->
+                <div class="footer-enlaces-der">
+                    <a href="#" class="footer-link">Acerca de</a>
+                    <a href="#" class="footer-link">Contacto</a>
+                </div>
+
+                <!-- Texto -->
+                <div class="footer-texto">
+                    <span>© 2025 TechAdemy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar contraseña
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+
+            const button = input.nextElementSibling;
+            const icon = button.querySelector('.icono-ojo');
+            
+            if (type === 'text') {
+                icon.innerHTML = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>`;
+            } else {
+                icon.innerHTML = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>`;
+            }
+        }
+
+        // Validación de contraseñas
+        document.getElementById('confirmar_password').addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            if (password !== confirmPassword) this.setCustomValidity('Las contraseñas no coinciden');
+            else this.setCustomValidity('');
+        });
+
+        // Validación general del formulario
+        document.querySelector('.form-registro').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmar_password').value;
+
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Las contraseñas no coinciden');
+                return false;
+            }
+
+            if (password.length < 8) {
+                e.preventDefault();
+                alert('La contraseña debe tener al menos 8 caracteres');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

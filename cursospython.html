@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Python - TechAdemy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header2.css">
+    <link rel="stylesheet" href="cursospython.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-principal">
+    <div class="contenedor-header">
+        <!-- Logo y marca -->
+        <a href="inicio2.html" class="logo-marca">
+            <img src="img/logo.jpg" alt="TechAdemy" class="logo-header">
+            <span class="nombre-marca">TechAdemy</span>
+        </a>
+
+        <!-- Navegación principal -->
+        <nav class="navegacion-principal">
+            <ul class="nav-enlaces">
+                <li class="nav-item">
+                    <a href="catalogo.html" class="nav-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        <span>Explorar cursos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="nosotros.html" class="nav-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Nosotros</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                    <a href="mis-cursos.html" class="nav-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11H1l6-6 6 6z"></path>
+                            <path d="M9 17l3 3 3-3"></path>
+                            <line x1="22" y1="18" x2="16" y2="12"></line>
+                            <line x1="16" y1="18" x2="22" y2="12"></line>
+                        </svg>
+                        <span>Mis cursos</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Barra de búsqueda -->
+        <div class="barra-busqueda">
+            <svg class="icono-busqueda" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+            <input 
+                type="text" 
+                class="input-busqueda" 
+                placeholder="Buscar cursos"
+            >
+        </div>
+
+        <!-- Botones de acción para usuario logueado -->
+        <div class="botones-accion-logueado">
+            <!-- Botón de ubicación -->
+            <a href="ubicacion.html" class="boton-icono" title="Ubicación">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </a>
+
+            <!-- Botón de favoritos/corazón -->
+            <a href="favoritos.html" class="boton-icono boton-favoritos" title="Favoritos">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span class="contador-favoritos">3</span>
+            </a>
+
+            <!-- Botón de carrito -->
+            <a href="carrito.html" class="boton-icono boton-carrito" title="Carrito">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="contador-carrito">2</span>
+            </a>
+
+            <!-- Botón de notificaciones/campanita -->
+            <div class="boton-notificaciones">
+                <button class="boton-icono boton-campana" title="Notificaciones" onclick="toggleNotificaciones()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="contador-notificaciones">5</span>
+                </button>
+
+                <!-- Dropdown de notificaciones -->
+                <div class="dropdown-notificaciones" id="dropdownNotificaciones">
+                    <div class="header-dropdown">
+                        <h4>Notificaciones</h4>
+                        <span class="marcar-leidas">Marcar como leídas</span>
+                    </div>
+                    <div class="lista-notificaciones">
+                        <div class="notificacion nueva">
+                            <div class="icono-notificacion">📚</div>
+                            <div class="contenido-notificacion">
+                                <p><strong>Nuevo curso disponible</strong></p>
+                                <span>JavaScript Avanzado ya está disponible</span>
+                                <small>Hace 2 horas</small>
+                            </div>
+                        </div>
+                        <div class="notificacion">
+                            <div class="icono-notificacion">🎯</div>
+                            <div class="contenido-notificacion">
+                                <p><strong>Meta completada</strong></p>
+                                <span>Has completado el 50% del curso de React</span>
+                                <small>Hace 1 día</small>
+                            </div>
+                        </div>
+                        <div class="notificacion">
+                            <div class="icono-notificacion">🏆</div>
+                            <div class="contenido-notificacion">
+                                <p><strong>Certificado disponible</strong></p>
+                                <span>Tu certificado de HTML/CSS está listo</span>
+                                <small>Hace 2 días</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-dropdown">
+                        <a href="todas-notificaciones.html">Ver todas las notificaciones</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avatar/Perfil del usuario -->
+            <div class="perfil-usuario">
+                <button class="boton-perfil" onclick="toggleMenuPerfil()" title="Mi perfil">
+                    <img src="img/perfil.jpg" alt="Mi perfil" class="avatar-usuario">
+                    <span class="nombre-usuario">Mi perfil</span>
+                    <svg class="icono-dropdown" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Dropdown del perfil -->
+                <div class="dropdown-perfil" id="dropdownPerfil">
+                    <div class="info-usuario">
+                        <img src="img/perfil.jpg" alt="Avatar" class="avatar-dropdown">
+                        <div class="datos-usuario">
+                            <h4>Jesús García</h4>
+                            <p>abuget84@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="opciones-perfil">
+                        <a href="mi-perfil.html" class="opcion-perfil">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Mi perfil
+                        </a>
+                        <div class="separador"></div>
+                        <a href="index.html" class="opcion-perfil salir">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16,17 21,12 16,7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            Cerrar sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil (hamburguesa) -->
+        <button class="menu-hamburguesa">
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+            <span class="linea-hamburguesa"></span>
+        </button>
+    </div>
+
+    <script>
+        // Toggle notificaciones
+        function toggleNotificaciones() {
+            const dropdown = document.getElementById('dropdownNotificaciones');
+            const perfilDropdown = document.getElementById('dropdownPerfil');
+            
+            // Cerrar dropdown de perfil si está abierto
+            if (perfilDropdown.classList.contains('activo')) {
+                perfilDropdown.classList.remove('activo');
+            }
+            
+            dropdown.classList.toggle('activo');
+        }
+
+        // Toggle menu perfil
+        function toggleMenuPerfil() {
+            const dropdown = document.getElementById('dropdownPerfil');
+            const notificacionesDropdown = document.getElementById('dropdownNotificaciones');
+            
+            // Cerrar dropdown de notificaciones si está abierto
+            if (notificacionesDropdown.classList.contains('activo')) {
+                notificacionesDropdown.classList.remove('activo');
+            }
+            
+            dropdown.classList.toggle('activo');
+        }
+
+        // Cerrar dropdowns al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            const notificaciones = document.getElementById('dropdownNotificaciones');
+            const perfil = document.getElementById('dropdownPerfil');
+            const botonNotificaciones = document.querySelector('.boton-campana');
+            const botonPerfil = document.querySelector('.boton-perfil');
+            
+            if (!botonNotificaciones.contains(e.target) && !notificaciones.contains(e.target)) {
+                notificaciones.classList.remove('activo');
+            }
+            
+            if (!botonPerfil.contains(e.target) && !perfil.contains(e.target)) {
+                perfil.classList.remove('activo');
+            }
+        });
+    </script>
+</header>
+
+    <main class="main-cursospython">
+        <div class="contenedor">
+            <!-- Header con información de la página -->
+            <div class="header-cursos">
+                <div class="info-principal">
+                    <h1>Cursos de Python</h1>
+                    <p class="descripcion">Aquí podrás encontrar desde el aprendizaje básico como variables, tipos de datos hasta realizar proyectos prácticos para llevar tu conocimiento a nuevos retos</p>
+                </div>
+                <div class="paginacion">
+                    <span class="texto-pagina">Página 2 de 10</span>
+                    <a href="#" class="siguiente-pagina">Siguiente página</a>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="estadisticas">
+                <div class="stat-item">
+                    <span class="stat-label">Número de estudiantes</span>
+                    <span class="stat-value">4,807</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Número de cursos</span>
+                    <span class="stat-value">568</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Número de prácticas</span>
+                    <span class="stat-value">95</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Calificación promedio de los cursos</span>
+                    <div class="rating-promedio">
+                        <span class="stat-value">4.5/5</span>
+                        <span class="estrella-promedio">★</span>
+        
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de cursos -->
+            <div class="grid-cursos">
+                <!-- Fila 1 -->
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso1.png" alt="Python Básico" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">100 días de programación: El curso completo de python</h3>
+                        <p class="instructores">Instructores: Dr. Angela Yu</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.7</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(1,178)</span>
+                            <span class="actualizacion">Última actualización: Marzo 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $339</span>
+                            <button class="btn-agregar">Agregar al carrito</button>
+                            <span class="duracion">68hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso2.png" alt="Python Intermedio" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">El bootcamp completo de Python: Aprende Python desde cero</h3>
+                        <p class="instructores">Instructores: Haris Ali Khan</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.5</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(985)</span>
+                            <span class="actualizacion">Última actualización: Enero 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $229</span>
+                            <button class="btn-agregar">Agregar al carrito</button>
+                            <span class="duracion">54hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso3.png" alt="Python Avanzado" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">Desarrollador web usando Python</h3>
+                        <p class="instructores">Instructores: Jose Salvatierra</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.7</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(2,2081)</span>
+                            <span class="actualizacion">Última actualización: Marzo 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $179</span>
+                            <button class="btn-agregar">Agregar al carrito</button>
+                            <span class="duracion">56hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fila 2 -->
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso4.png" alt="Python Django" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">Mega curso de Python: Aprende Python en 60 día, construye 60 apps</h3>
+                        <p class="instructores">Instructores: Ardit Sulce</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.7</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(3,354)</span>
+                            <span class="actualizacion">Última actualización: Noviembre 2024</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $199</span>
+                            <button class="btn-agregar">Agregar al carrito</button>
+                            <span class="duracion">49hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso5.png" alt="Python Flask" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">Python para ciencia de datos y lenguaje máquina</h3>
+                        <p class="instructores">Instructores: Jose Portilla</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.6</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(1,155)</span>
+                            <span class="actualizacion">Última actualización: Abril 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $199</span>
+                            <button class="btn-agregar">Agregar al carrito</button>
+                            <span class="duracion">25hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso6.png" alt="Python Data Science" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">Python para principiantes</h3>
+                        <p class="instructores">Instructores: Chameron Díaz</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.6</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(186)</span>
+                            <span class="actualizacion">Última actualización: Marzo 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $179</span>
+                            <button class="btn-agregar">Agregar al carrito</button>
+                            <span class="duracion">4.5hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fila 3 -->
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso7.png" alt="Python Automation" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">Python 100%: Puedes ser un maestro programando en Python en 16 días</h3>
+                        <p class="instructores">Instructores: Federico Garay</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.8</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(587)</span>
+                            <span class="actualizacion">Última actualización: Abril 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $179</span>
+                            <button class="btn-agregar">Agregar carrito</button>
+                            <span class="duracion">26.5hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso8.png" alt="Python Machine Learning" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">Datos con Python, estructura y algoritmos + ejercicios usando código</h3>
+                        <p class="instructores">Instructores: Scott Barrett</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.7</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(186)</span>
+                            <span class="actualizacion">Última actualización: Junio 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $399</span>
+                            <button class="btn-agregar">Agregar carrito</button>
+                            <span class="duracion">10hrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="imagen-curso">
+                        <img src="img/curso9.png" alt="Python API Development" class="imagen-curso-real">
+                    </div>
+                    <div class="info-curso">
+                        <h3 class="nombre-curso">El bootcamp completo para todos de Python desde cero 2025</h3>
+                        <p class="instructores">Instructores: Elshad Karimov</p>
+                        <div class="rating-curso">
+                            <span class="puntuacion">4.4</span>
+                            <div class="estrellas">
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella llena">★</span>
+                                <span class="estrella media">★</span>
+                            </div>
+                            <span class="total-reviews">(1,668)</span>
+                            <span class="actualizacion">Última actualización: Marzo 2025</span>
+                        </div>
+                        <div class="precio-info">
+                            <span class="precio">MX $199</span>
+                            <button class="btn-agregar">Agregar carrito</button>
+                            <span class="duracion">89.5hrs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+      <footer class="footer">
+        <div class="contenedor">
+            <div class="footer-contenido">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <img src="img/logotexto.png" alt="TechAdemy Logo" class="logo-footer">
+                </div>
+
+                <!-- Enlaces Izquierda -->
+                <div class="footer-enlaces-izq">
+                    <a href="#" class="footer-link">Términos y Condiciones</a>
+                    <a href="#" class="footer-link">Política de Privacidad</a>
+                    <a href="#" class="footer-link">Soporte</a>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="footer-redes">
+                    <a href="#" class="red-social" aria-label="TikTok">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Twitter/X">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Enlaces Derecha -->
+                <div class="footer-enlaces-der">
+                    <a href="#" class="footer-link">Acerca de</a>
+                    <a href="#" class="footer-link">Contacto</a>
+                </div>
+
+                <!-- Texto -->
+                <div class="footer-texto">
+                    <span>© 2025 TechAdemy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

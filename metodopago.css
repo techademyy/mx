@@ -1,0 +1,401 @@
+/* ===========================================
+   PÁGINA MÉTODOS DE PAGO
+   =========================================== */
+
+/* ===========================================
+   HEADER MÉTODOS
+   =========================================== */
+
+.header-metodos {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gris-claro);
+}
+
+.header-metodos h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 20px;
+}
+
+/* ===========================================
+   CHECKBOX PERSONALIZADO
+   =========================================== */
+
+.checkbox-container {
+    margin-top: 15px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--negro);
+    user-select: none;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--negro);
+    border-radius: 3px;
+    background: var(--blanco);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkmark {
+    background: var(--negro);
+    border-color: var(--negro);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--blanco);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox-wrapper:hover .checkmark {
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.checkbox-texto {
+    font-weight: 500;
+}
+
+/* ===========================================
+   MÉTODOS GUARDADOS
+   =========================================== */
+
+.metodos-guardados-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.titulo-metodos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.metodos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* ===========================================
+   TARJETAS DE MÉTODOS DE PAGO
+   =========================================== */
+
+.metodo-pago-card {
+    background: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.metodo-pago-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--azul-principal);
+}
+
+.metodo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.metodo-tipo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icono-tarjeta {
+    width: 50px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--blanco);
+}
+
+.icono-tarjeta.visa {
+    background: linear-gradient(135deg, #1a1f71, #0f4c75);
+}
+
+.icono-tarjeta.paypal {
+    background: linear-gradient(135deg, #0070ba, #003087);
+}
+
+.metodo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metodo-nombre {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--negro);
+}
+
+.metodo-numero {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: var(--gris-medio);
+    font-weight: 500;
+}
+
+.metodo-acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-editar,
+.btn-eliminar {
+    padding: 8px 16px;
+    border: 2px solid var(--negro);
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-editar {
+    background: var(--blanco);
+    color: var(--negro);
+}
+
+.btn-editar:hover {
+    background: var(--azul-principal);
+    color: var(--blanco);
+    border-color: var(--azul-principal);
+}
+
+.btn-eliminar {
+    background: var(--blanco);
+    color: #dc2626;
+    border-color: #dc2626;
+}
+
+.btn-eliminar:hover {
+    background: #dc2626;
+    color: var(--blanco);
+}
+
+.metodo-detalles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.metodo-vencimiento,
+.metodo-estado {
+    color: var(--gris-medio);
+    font-weight: 500;
+}
+
+.metodo-predeterminado {
+    background: var(--negro);
+    color: var(--blanco);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===========================================
+   ÁREA VACÍA
+   =========================================== */
+
+.area-vacia {
+    margin-top: 20px;
+}
+
+.lineas-punteadas {
+    border: 3px dashed var(--gris-claro);
+    border-radius: 10px;
+    padding: 60px 20px;
+    text-align: center;
+    background: var(--gris-suave);
+    transition: all 0.3s ease;
+}
+
+.lineas-punteadas:hover {
+    border-color: var(--gris-medio);
+    background: #f3f4f6;
+}
+
+.texto-vacio {
+    color: var(--gris-medio);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ===========================================
+   BOTÓN AGREGAR MÉTODO
+   =========================================== */
+
+.boton-agregar-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 25px;
+}
+
+.btn-agregar-metodo {
+    background: var(--negro);
+    color: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-agregar-metodo:hover {
+    background: var(--blanco);
+    color: var(--negro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-agregar-metodo:active {
+    transform: translateY(0);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .metodo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .metodo-acciones {
+        align-self: stretch;
+        justify-content: flex-end;
+    }
+
+    .metodo-detalles {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .header-metodos h1 {
+        font-size: 22px;
+    }
+
+    .metodo-pago-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metodo-tipo {
+        gap: 10px;
+    }
+
+    .icono-tarjeta {
+        width: 40px;
+        height: 28px;
+        font-size: 8px;
+    }
+
+    .metodo-nombre {
+        font-size: 14px;
+    }
+
+    .metodo-numero {
+        font-size: 12px;
+    }
+
+    .btn-editar,
+    .btn-eliminar {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .btn-agregar-metodo {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+
+.metodo-pago-card {
+    animation: slideInUp 0.5s ease-out;
+}
+
+.metodo-pago-card:nth-child(1) { animation-delay: 0.1s; }
+.metodo-pago-card:nth-child(2) { animation-delay: 0.2s; }
+.area-vacia { animation: slideInUp 0.5s ease-out 0.3s both; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de pulso en el botón agregar */
+.btn-agregar-metodo {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1); }
+}

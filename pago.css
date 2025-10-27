@@ -1,0 +1,579 @@
+/* ===========================================
+   PÁGINA DE PAGO
+   =========================================== */
+
+:root {
+    --azul-principal: #2563eb;
+    --gris-claro: #e5e7eb;
+    --gris-medio: #6b7280;
+    --gris-oscuro: #374151;
+    --gris-suave: #f9fafb;
+    --negro: #111827;
+    --blanco: #ffffff;
+    --border-color: #d1d5db;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--blanco);
+    color: var(--negro);
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===========================================
+   HEADER DE PAGO
+   =========================================== */
+
+.header-pago {
+    border-bottom: 2px solid var(--negro);
+    padding: 15px 0;
+    background: var(--blanco);
+}
+
+.contenedor-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 30px;
+    border: 2px solid var(--negro);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--negro);
+    overflow: hidden;
+}
+
+.logo-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Fallback si la imagen no carga */
+.logo-imagen:not([src]),
+.logo-imagen[src=""] {
+    display: none;
+}
+
+.logo-imagen:not([src]) + .logo::after,
+.logo-imagen[src=""] + .logo::after {
+    content: "Logo";
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--negro);
+}
+
+.nombre-empresa {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nombre-empresa:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e3a8a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateY(-1px);
+}
+
+/* Fallback para navegadores que no soportan background-clip */
+@supports not (-webkit-background-clip: text) {
+    .nombre-empresa {
+        color: #3b82f6;
+    }
+    
+    .nombre-empresa:hover {
+        color: #2563eb;
+    }
+}
+.cancelar-compra {
+    color: var(--negro);
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cancelar-compra:hover {
+    color: var(--azul-principal);
+}
+
+/* ===========================================
+   CONTENIDO PRINCIPAL
+   =========================================== */
+
+.main-pago {
+    padding: 40px 0;
+}
+
+.main-pago h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 40px;
+}
+
+.contenido-pago {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ===========================================
+   FORMULARIO DE PAGO
+   =========================================== */
+
+.formulario-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.seccion-direccion h2,
+.seccion-metodo h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 20px;
+}
+
+/* Campo País */
+.campo-pais {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-pais label {
+    font-weight: 500;
+    color: var(--negro);
+    font-size: 14px;
+}
+
+.select-pais {
+    padding: 10px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    background: var(--blanco);
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.select-pais:focus {
+    outline: none;
+    border-color: var(--azul-principal);
+}
+
+/* ===========================================
+   OPCIONES DE PAGO
+   =========================================== */
+
+.opciones-pago {
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.opcion-pago {
+    position: relative;
+}
+
+.opcion-pago:not(:last-child) {
+    border-bottom: 2px solid var(--negro);
+}
+
+.opcion-pago input[type="radio"] {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.opcion-pago label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px 15px 45px;
+    cursor: pointer;
+    background: var(--blanco);
+    transition: all 0.3s ease;
+}
+
+.opcion-pago label:hover {
+    background: var(--gris-suave);
+}
+
+.opcion-pago input[type="radio"]:checked + label {
+    background: var(--gris-suave);
+}
+
+.texto-paypal,
+.texto-tarjeta {
+    font-weight: 500;
+    color: var(--negro);
+}
+
+.logo-paypal {
+    height: 20px;
+    width: auto;
+}
+
+.logos-tarjetas {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.logo-visa,
+.logo-mastercard,
+.logo-amex {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    background: var(--blanco);
+}
+
+.logo-visa {
+    color: #1a1f71;
+}
+
+.logo-mastercard {
+    color: #eb001b;
+}
+
+.logo-amex {
+    color: #006fcf;
+}
+
+/* ===========================================
+   CAMPOS DE TARJETA
+   =========================================== */
+
+.campos-tarjeta {
+    display: none;
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--gris-suave);
+    gap: 20px;
+    flex-direction: column;
+}
+
+.campo-numero,
+.campos-fila {
+    display: flex;
+    gap: 15px;
+}
+
+.campos-fila {
+    justify-content: space-between;
+}
+
+.campo-numero {
+    flex-direction: column;
+}
+
+.campo-fecha,
+.campo-cvv,
+.campo-nombre,
+.campo-curp {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campos-tarjeta label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--negro);
+}
+
+.input-tarjeta,
+.input-fecha,
+.input-cvv,
+.input-nombre,
+.input-curp {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    background: var(--blanco);
+}
+
+.input-tarjeta:focus,
+.input-fecha:focus,
+.input-cvv:focus,
+.input-nombre:focus,
+.input-curp:focus {
+    outline: none;
+    border-color: var(--azul-principal);
+}
+
+.checkbox-guardar {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.checkbox-guardar input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+.checkbox-guardar label {
+    font-size: 12px;
+    color: var(--gris-oscuro);
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/* ===========================================
+   RESUMEN DE COMPRA
+   =========================================== */
+
+.resumen-compra {
+    background: var(--gris-suave);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    position: sticky;
+    top: 20px;
+}
+
+.resumen-compra h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 20px;
+}
+
+.detalles-precio {
+    margin-bottom: 20px;
+}
+
+.fila-precio {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--gris-oscuro);
+}
+
+.fila-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--negro);
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 10px;
+}
+
+.terminos {
+    font-size: 11px;
+    color: var(--gris-medio);
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.btn-pagar {
+    width: 100%;
+    background: var(--negro);
+    color: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.btn-pagar:hover {
+    background: var(--azul-principal);
+    border-color: var(--azul-principal);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.garantia {
+    text-align: center;
+    font-size: 13px;
+    color: var(--gris-medio);
+    margin-bottom: 20px;
+}
+
+.seccion-cupon {
+    display: flex;
+    gap: 10px;
+}
+
+.input-cupon {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+}
+
+.input-cupon:focus {
+    outline: none;
+    border-color: var(--azul-principal);
+}
+
+.btn-aplicar {
+    background: var(--blanco);
+    color: var(--negro);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-aplicar:hover {
+    background: var(--gris-suave);
+    border-color: var(--negro);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 1024px) {
+    .contenido-pago {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .resumen-compra {
+        position: static;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-header {
+        padding: 0 15px;
+    }
+
+    .main-pago {
+        padding: 20px 0;
+    }
+
+    .main-pago h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .campos-fila {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .resumen-compra {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .main-pago h1 {
+        font-size: 24px;
+    }
+
+    .campos-tarjeta {
+        padding: 15px;
+    }
+
+    .resumen-compra {
+        padding: 15px;
+    }
+
+    .seccion-cupon {
+        flex-direction: column;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.formulario-pago,
+.resumen-compra {
+    animation: fadeInUp 0.6s ease-out;
+}

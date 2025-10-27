@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - TechAdemy</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="nosotros.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <header class="header-principal">
+        <div class="contenedor-header">
+            <!-- Logo y marca -->
+            <a href="index.html" class="logo-marca">
+                <img src="img/logo.jpg" alt="TechAdemy Logo" class="logo-header">
+                <span class="nombre-marca">TechAdemy</span>
+            </a>
+
+            <!-- Navegación principal -->
+            <nav class="navegacion-principal">
+                <ul class="nav-enlaces">
+                    <li class="nav-item">
+                        <a href="catalogo.html" class="nav-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                            <span>Explorar cursos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="nosotros.html" class="nav-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span>Nosotros</span>
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            <span>Mis cursos</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Barra de búsqueda -->
+                <div class="barra-busqueda">
+                    <svg class="icono-busqueda" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="input-busqueda" placeholder="Buscar cursos...">
+                </div>
+            </nav>
+
+            <!-- Botones de acción -->
+            <div class="botones-accion">
+                <!-- Ubicación -->
+                <a href="#" class="boton-icono" title="Ubicación">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </a>
+
+                <!-- Carrito -->
+                <a href="login.html" class="boton-icono" title="Carrito">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+
+                <!-- Iniciar sesión -->
+                <a href="login.html" class="boton-iniciar-sesion">
+                    Iniciar sesión
+                </a>
+
+                <!-- Registrarse -->
+                <a href="registro.html" class="btn-registrarse">
+                    Registrarse
+                </a>
+            </div>
+
+            <!-- Menú hamburguesa para móvil -->
+            <button class="menu-hamburguesa">
+                <span class="linea-hamburguesa"></span>
+                <span class="linea-hamburguesa"></span>
+                <span class="linea-hamburguesa"></span>
+            </button>
+        </div>
+    </header>
+    <!-- ===============================
+         Aquí iba el include de header.php
+         Sustituye este comentario por el contenido de tu archivo header.html
+    ================================ -->
+
+    <main class="main-nosotros">
+        <!-- Sección Hero Banner -->
+        <section class="seccion-hero-nosotros">
+            <div class="contenedor">
+                <div class="hero-banner-nosotros">
+                    <div class="texto-hero-nosotros">
+                        <h1>Bienvenido en donde las posibilidades se hacen realidad</h1>
+                    </div>
+                    <div class="imagen-hero-nosotros">
+                        <!-- Aquí puedes colocar tu imagen -->
+                        <img src="img/cursos.jpg" alt="TechAdemy - Educación del futuro" class="img-hero-nosotros">
+                        <!-- Si no tienes imagen aún, puedes usar este placeholder: -->
+                        <!-- <div class="placeholder-imagen">Tu imagen aquí</div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Estadísticas -->
+        <section class="seccion-estadisticas">
+            <div class="contenedor">
+                <div class="estadisticas-header">
+                    <h2>Haciendo impacto en todo el mundo</h2>
+                    <p>Con nuestro catálogo, aprenderás las habilidades más actualizadas para diferentes temas</p>
+                </div>
+                
+                <div class="estadisticas-grid">
+                    <div class="estadistica">
+                        <span class="numero">10k+</span>
+                        <span class="descripcion">Instructores</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">50k+</span>
+                        <span class="descripcion">Cursos</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">10M+</span>
+                        <span class="descripcion">Estudiantes</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">20</span>
+                        <span class="descripcion">Idiomas distintos</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">50M+</span>
+                        <span class="descripcion">Compras de cursos</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">5k+</span>
+                        <span class="descripcion">Certificados entregados</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Testimonios -->
+        <section class="seccion-testimonios">
+            <div class="contenedor">
+                <h2 class="titulo-testimonios">Lo que nuestros estudiantes dicen</h2>
+                
+                <div class="testimonios-grid">
+                    <div class="testimonio">
+                        <h3>"En 3 meses pasé de no saber nada a crear mi primera aplicación web. ¡Totalmente recomendado!"</h3>
+                        <p>Escrito por @CarlosDevMX</p>
+                    </div>
+                    <div class="testimonio">
+                        <h3>"Como madre trabajadora, los cursos en línea fueron mi salvación. Pude estudiar desarrollo web en mis tiempos libres, pausar las clases cuando mis hijos necesitaban atención y repasar los temas las veces que fuera necesario."</h3>
+                        <p>Escrito por @SofiaCode2024</p>
+                    </div>
+                    <div class="testimonio">
+                        <h3>"Lo mejor fue el proyecto final donde implementamos un sistema de seguridad completo. Ya conseguí trabajo en una empresa de IT gracias a lo aprendido aquí."</h3>
+                        <p>Escrito por @TechMiguel_21</p>
+                    </div>
+                </div>
+
+                <!-- Imagen de testimonios -->
+                <div class="imagen-testimonios">
+                    <!-- Aquí puedes colocar tu imagen -->
+                    <img src="img/marcas.png" alt="Estudiantes satisfechos" class="img-testimonios">
+                    <!-- Si no tienes imagen aún: -->
+                    <!-- <div class="placeholder-imagen">Tu imagen aquí</div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="footer-contenido">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <img src="img/logotexto.png" alt="TechAdemy Logo" class="logo-footer">
+                </div>
+
+                <!-- Enlaces Izquierda -->
+                <div class="footer-enlaces-izq">
+                    <a href="#" class="footer-link">Términos y Condiciones</a>
+                    <a href="#" class="footer-link">Política de Privacidad</a>
+                    <a href="#" class="footer-link">Soporte</a>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="footer-redes">
+                    <a href="#" class="red-social" aria-label="TikTok">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="red-social" aria-label="Twitter/X">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Enlaces Derecha -->
+                <div class="footer-enlaces-der">
+                    <a href="#" class="footer-link">Acerca de</a>
+                    <a href="#" class="footer-link">Contacto</a>
+                </div>
+
+                <!-- Texto -->
+                <div class="footer-texto">
+                    <span>© 2025 TechAdemy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ===============================
+         Aquí iba el include de footer.php
+         Sustituye este comentario por el contenido de tu archivo footer.html
+    ================================ -->
+
+</body>
+</html>

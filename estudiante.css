@@ -1,0 +1,385 @@
+/* ===========================================
+   PÁGINA DESCUENTO ESTUDIANTES
+   =========================================== */
+
+/* ===========================================
+   HEADER ESTUDIANTE
+   =========================================== */
+
+.header-estudiante {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gris-claro);
+    text-align: center;
+}
+
+.header-estudiante h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 8px;
+}
+
+.subtitulo-estudiante {
+    font-size: 14px;
+    color: var(--gris-medio);
+    font-weight: 500;
+}
+
+/* ===========================================
+   INFORMACIÓN DEL DESCUENTO
+   =========================================== */
+
+.info-descuento {
+    margin-bottom: 30px;
+}
+
+.info-descuento h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--negro);
+    margin: 0;
+    text-align: left;
+}
+
+/* ===========================================
+   ÁREA DE SUBIDA DE DOCUMENTOS
+   =========================================== */
+
+.upload-container {
+    margin-bottom: 30px;
+}
+
+.upload-area {
+    border: 3px dashed var(--gris-claro);
+    border-radius: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    background: var(--gris-suave);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-area:hover {
+    border-color: var(--azul-principal);
+    background: rgba(37, 99, 235, 0.05);
+    transform: translateY(-2px);
+}
+
+.upload-area.dragover {
+    border-color: var(--azul-principal);
+    background: rgba(37, 99, 235, 0.1);
+    transform: scale(1.02);
+}
+
+.upload-area.has-files {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.upload-icon {
+    color: var(--gris-medio);
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover .upload-icon {
+    color: var(--azul-principal);
+    transform: scale(1.1);
+}
+
+.upload-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--negro);
+    margin: 0;
+}
+
+.upload-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--gris-medio);
+    margin: 0;
+}
+
+.documento-input-hidden {
+    display: none;
+}
+
+/* ===========================================
+   ARCHIVOS SUBIDOS
+   =========================================== */
+
+.archivos-subidos {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.archivo-item {
+    background: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: slideInUp 0.5s ease-out;
+}
+
+.archivo-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.archivo-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.archivo-icono {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gris-suave);
+    border-radius: 8px;
+    border: 1px solid var(--gris-claro);
+}
+
+.archivo-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.archivo-nombre {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--negro);
+    word-break: break-all;
+}
+
+.archivo-tamano {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--gris-medio);
+}
+
+.btn-eliminar-archivo {
+    background: #dc2626;
+    color: var(--blanco);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-eliminar-archivo:hover {
+    background: #b91c1c;
+    transform: scale(1.1);
+}
+
+/* ===========================================
+   BOTÓN SUBIR ARCHIVOS
+   =========================================== */
+
+.boton-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--gris-claro);
+}
+
+.btn-subir-archivos {
+    background: var(--negro);
+    color: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: none;
+}
+
+.btn-subir-archivos:hover {
+    background: var(--blanco);
+    color: var(--negro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-subir-archivos:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-subir-archivos:disabled:hover {
+    background: var(--negro);
+    color: var(--blanco);
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .upload-area {
+        padding: 40px 15px;
+        min-height: 150px;
+    }
+
+    .upload-text {
+        font-size: 16px;
+    }
+
+    .upload-subtext {
+        font-size: 12px;
+    }
+
+    .header-estudiante h1 {
+        font-size: 22px;
+    }
+
+    .info-descuento h2 {
+        font-size: 14px;
+    }
+
+    .archivo-item {
+        padding: 12px;
+    }
+
+    .archivo-info {
+        gap: 10px;
+    }
+
+    .archivo-icono {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .upload-area {
+        padding: 30px 10px;
+    }
+
+    .btn-subir-archivos {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .archivo-nombre {
+        font-size: 13px;
+    }
+
+    .archivo-tamano {
+        font-size: 11px;
+    }
+
+    .archivo-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .btn-eliminar-archivo {
+        align-self: flex-end;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.upload-area {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de pulsación en el área de subida */
+.upload-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.upload-area:hover::before {
+    opacity: 1;
+}
+
+/* Estados de carga */
+.btn-subir-archivos.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}

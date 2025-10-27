@@ -1,0 +1,263 @@
+/* ===========================================
+   PÁGINA CATÁLOGO DE CURSOS
+   =========================================== */
+
+:root {
+    --azul-principal: #2563eb;
+    --azul-claro: #eff6ff;
+    --gris-claro: #e5e7eb;
+    --gris-medio: #6b7280;
+    --gris-oscuro: #374151;
+    --gris-suave: #f9fafb;
+    --negro: #111827;
+    --blanco: #ffffff;
+}
+
+.main-catalogo {
+    min-height: calc(100vh - 200px);
+    padding: 40px 0 80px;
+    background: var(--gris-suave);
+}
+
+/* ===========================================
+   HEADER DE LA PÁGINA
+   =========================================== */
+
+.header-catalogo {
+    margin-bottom: 40px;
+}
+
+.header-catalogo h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--negro);
+    margin: 0;
+    text-align: center;
+}
+
+/* ===========================================
+   GRID DEL CATÁLOGO
+   =========================================== */
+
+.grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ===========================================
+   TARJETA DE CATEGORÍA
+   =========================================== */
+
+.tarjeta-categoria {
+    background: var(--blanco);
+    border: 3px solid var(--negro);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-categoria:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--azul-principal);
+}
+
+/* ===========================================
+   IMAGEN DE LA CATEGORÍA
+   =========================================== */
+
+.imagen-categoria {
+    margin-bottom: 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-categoria-real {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--gris-claro);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.imagen-categoria-real:hover {
+    transform: scale(1.05);
+    border-color: var(--azul-principal);
+}
+
+/* Fallback si la imagen no carga */
+.imagen-categoria-real:not([src]),
+.imagen-categoria-real[src=""] {
+    background: var(--gris-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gris-medio);
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+}
+
+.imagen-categoria-real:not([src])::before,
+.imagen-categoria-real[src=""]::before {
+    content: "Imagen no disponible";
+}
+
+/* Efecto X como placeholder */
+.imagen-categoria-real:not([src])::after,
+.imagen-categoria-real[src=""]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: 
+        linear-gradient(45deg, transparent 40%, var(--gris-medio) 40%, var(--gris-medio) 60%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, var(--gris-medio) 40%, var(--gris-medio) 60%, transparent 60%);
+}
+
+/* ===========================================
+   TÍTULO DE LA CATEGORÍA
+   =========================================== */
+
+.titulo-categoria {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--negro);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    padding: 0 10px;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .main-catalogo {
+        padding: 20px 0 60px;
+    }
+
+    .header-catalogo h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .grid-catalogo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .tarjeta-categoria {
+        padding: 16px;
+        min-height: 240px;
+    }
+
+    .imagen-categoria-real {
+        height: 140px;
+    }
+
+    .titulo-categoria {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-catalogo {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tarjeta-categoria {
+        padding: 12px;
+        min-height: 220px;
+    }
+
+    .imagen-categoria-real {
+        height: 120px;
+    }
+
+    .titulo-categoria {
+        font-size: 13px;
+    }
+
+    .header-catalogo h1 {
+        font-size: 24px;
+    }
+}
+
+/* Para tablets en orientación horizontal */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .grid-catalogo {
+        max-width: 900px;
+        gap: 20px;
+    }
+
+    .tarjeta-categoria {
+        min-height: 260px;
+    }
+
+    .imagen-categoria-real {
+        height: 160px;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tarjeta-categoria {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Retraso escalonado para las animaciones */
+.tarjeta-categoria:nth-child(1) { animation-delay: 0.1s; }
+.tarjeta-categoria:nth-child(2) { animation-delay: 0.2s; }
+.tarjeta-categoria:nth-child(3) { animation-delay: 0.3s; }
+.tarjeta-categoria:nth-child(4) { animation-delay: 0.4s; }
+.tarjeta-categoria:nth-child(5) { animation-delay: 0.5s; }
+.tarjeta-categoria:nth-child(6) { animation-delay: 0.6s; }
+.tarjeta-categoria:nth-child(7) { animation-delay: 0.7s; }
+.tarjeta-categoria:nth-child(8) { animation-delay: 0.8s; }
+.tarjeta-categoria:nth-child(9) { animation-delay: 0.9s; }
+
+/* ===========================================
+   EFECTOS ESPECIALES
+   =========================================== */
+
+/* Efecto de carga de imagen */
+.imagen-categoria-real {
+    background: linear-gradient(135deg, var(--gris-suave) 0%, var(--gris-claro) 100%);
+}

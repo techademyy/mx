@@ -1,0 +1,299 @@
+/* ===========================================
+   PÁGINA NOSOTROS - STYLES
+   =========================================== */
+
+.main-nosotros {
+    padding-top: 0px; /* Para compensar el header fijo */
+}
+
+
+.seccion-hero-nosotros {
+    background: var(--gris-suave);
+    padding: 20px 0;
+}
+
+.hero-banner-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    min-height: 500px;
+    background: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 12px;
+    padding: 60px;
+}
+
+.texto-hero-nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--negro);
+    padding: 60px 30px;
+    background: var(--blanco);
+    min-height: 300px;
+}
+
+.texto-hero-nosotros h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--negro);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.imagen-hero-nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gris-claro);
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.img-hero-nosotros {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Placeholder para cuando no hay imagen */
+.placeholder-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background: var(--gris-suave);
+    color: var(--gris-medio);
+    font-size: 18px;
+    font-weight: 500;
+    border: 2px dashed var(--gris-claro);
+    border-radius: 8px;
+}
+
+/* ===========================================
+   SECCIÓN ESTADÍSTICAS
+   =========================================== */
+
+.seccion-estadisticas {
+    background: var(--blanco);
+    padding: 80px 0;
+    border-bottom: 2px solid var(--gris-claro);
+}
+
+.estadisticas-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.estadisticas-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 20px;
+}
+
+.estadisticas-header p {
+    font-size: 18px;
+    color: var(--gris-medio);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.estadistica {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--blanco);
+    border: 2px solid var(--gris-claro);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.estadistica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.estadistica .numero {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--azul-principal);
+    margin-bottom: 10px;
+}
+
+.estadistica .descripcion {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--negro);
+}
+
+/* ===========================================
+   SECCIÓN TESTIMONIOS
+   =========================================== */
+
+.seccion-testimonios {
+    background: var(--gris-suave);
+    padding: 80px 0;
+}
+
+.titulo-testimonios {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--negro);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.testimonio {
+    background: var(--blanco);
+    padding: 30px;
+    border: 2px solid var(--gris-claro);
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonio:hover {
+    transform: translateY(-5px);
+}
+
+.testimonio h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 15px;
+}
+
+.testimonio p {
+    font-size: 14px;
+    color: var(--gris-medio);
+    font-style: italic;
+}
+
+.imagen-testimonios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    border: 2px solid var(--gris-claro);
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.img-testimonios {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 1024px) {
+    .hero-banner-nosotros {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 40px;
+        text-align: center;
+    }
+    
+    .texto-hero-nosotros h1 {
+        font-size: 36px;
+    }
+    
+    .estadisticas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .texto-hero-nosotros {
+        padding: 40px 20px;
+        min-height: 200px;
+    }
+    
+    .texto-hero-nosotros h1 {
+        font-size: 28px;
+    }
+    
+    .estadisticas-header h2 {
+        font-size: 28px;
+    }
+    
+    .estadisticas-header p {
+        font-size: 16px;
+    }
+    
+    .estadisticas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .estadistica .numero {
+        font-size: 36px;
+    }
+    
+    .titulo-testimonios {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion-hero-nosotros,
+    .seccion-estadisticas,
+    .seccion-testimonios {
+        padding: 40px 0;
+    }
+    
+    .hero-banner-nosotros {
+        padding: 30px 20px;
+    }
+    
+    .texto-hero-nosotros h1 {
+        font-size: 24px;
+    }
+    
+    .estadistica {
+        padding: 20px 15px;
+    }
+    
+    .testimonio {
+        padding: 20px;
+    }
+}

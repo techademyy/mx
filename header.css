@@ -1,0 +1,427 @@
+/* Variables */
+:root {
+    --azul-principal: #2563eb;
+    --azul-oscuro: #1e40af;
+    --azul-claro: #dbeafe;
+    --blanco: #ffffff;
+    --gris-suave: #f8fafc;
+    --gris-medio: #64748b;
+    --gris-claro: #e2e8f0;
+    --negro: #1e293b;
+    --rojo-alerta: #dc2626;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+/* Header principal */
+.header-principal {
+    background: var(--blanco);
+    border-bottom: 2px solid var(--gris-claro);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1000;
+}
+
+.contenedor-header {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    gap: 20px;
+}
+
+/* Logo y marca */
+.logo-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-header {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.nombre-marca {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--azul-principal);
+    white-space: nowrap;
+}
+
+/* Navegación principal */
+.navegacion-principal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    max-width: calc(100% - 200px); /* Reserva espacio para logo y botones */
+}
+
+.nav-enlaces {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    color: var(--gris-medio);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: var(--azul-claro);
+    color: var(--azul-principal);
+}
+
+.nav-link svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Barra de búsqueda */
+.barra-busqueda {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    min-width: 200px;
+}
+
+.input-busqueda {
+    width: 100%;
+    padding: 10px 16px 10px 44px;
+    border: 2px solid var(--gris-claro);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    background: var(--gris-suave);
+}
+
+.input-busqueda:focus {
+    outline: none;
+    border-color: var(--azul-principal);
+    background: var(--blanco);
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gris-medio);
+    pointer-events: none;
+}
+
+/* Botones de acción */
+.botones-accion {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.boton-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--gris-claro);
+    border-radius: 8px;
+    color: var(--gris-medio);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.boton-icono:hover {
+    background: var(--azul-claro);
+    color: var(--azul-principal);
+    border-color: var(--azul-principal);
+}
+
+/* BOTÓN INICIAR SESIÓN */
+.boton-iniciar-sesion {
+    background: transparent;
+    color: var(--azul-principal);
+    border: 2px solid var(--azul-principal);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+}
+
+.boton-iniciar-sesion:hover {
+    background: var(--azul-principal);
+    color: var(--blanco);
+    transform: translateY(-1px);
+}
+
+/* BOTÓN REGISTRARSE */
+.btn-registrarse,
+.boton-registrarse {
+    background: var(--azul-principal) !important;
+    color: var(--blanco) !important;
+    border: 2px solid var(--azul-principal);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-registrarse:hover,
+.boton-registrarse:hover {
+    background: var(--azul-oscuro) !important;
+    color: var(--blanco) !important;
+    text-decoration: none !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-registrarse:visited,
+.btn-registrarse:link,
+.btn-registrarse:active,
+.boton-registrarse:visited,
+.boton-registrarse:link,
+.boton-registrarse:active {
+    color: var(--blanco) !important;
+    text-decoration: none !important;
+}
+
+/* Forzar estilos del botón registrarse en header */
+.header-principal .btn-registrarse,
+.contenedor-header .btn-registrarse,
+.botones-accion .btn-registrarse {
+    background: var(--azul-principal) !important;
+    color: var(--blanco) !important;
+    text-decoration: none !important;
+}
+
+.header-principal .btn-registrarse:hover,
+.contenedor-header .btn-registrarse:hover,
+.botones-accion .btn-registrarse:hover {
+    background: var(--azul-oscuro) !important;
+    color: var(--blanco) !important;
+    text-decoration: none !important;
+}
+
+/* Menú móvil (hamburguesa) */
+.menu-hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.linea-hamburguesa {
+    width: 24px;
+    height: 3px;
+    background: var(--gris-medio);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .contenedor-header {
+        padding: 0 12px;
+        gap: 16px;
+    }
+    
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    .nombre-marca {
+        font-size: 22px;
+    }
+    
+    .barra-busqueda {
+        max-width: 250px;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contenedor-header {
+        gap: 12px;
+    }
+    
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    .barra-busqueda {
+        max-width: 200px;
+        min-width: 150px;
+    }
+    
+    .boton-iniciar-sesion,
+    .btn-registrarse,
+    .boton-registrarse {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navegacion-principal .nav-enlaces {
+        gap: 2px;
+    }
+    
+    .nav-link {
+        padding: 6px;
+        font-size: 11px;
+    }
+    
+    .nav-link span {
+        display: none; /* Oculta texto, solo muestra iconos */
+    }
+    
+    .barra-busqueda {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navegacion-principal {
+        display: none;
+    }
+    
+    .menu-hamburguesa {
+        display: flex;
+    }
+    
+    .contenedor-header {
+        gap: 8px;
+    }
+    
+    .nombre-marca {
+        font-size: 18px;
+    }
+    
+    .logo-header {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .barra-busqueda {
+        max-width: 150px;
+        min-width: 100px;
+    }
+    
+    .input-busqueda {
+        padding: 8px 12px 8px 36px;
+        font-size: 12px;
+    }
+    
+    .boton-iniciar-sesion,
+    .btn-registrarse,
+    .boton-registrarse {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-header {
+        padding: 0 8px;
+        height: 60px;
+    }
+    
+    .nombre-marca {
+        font-size: 16px;
+    }
+    
+    .logo-header {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .barra-busqueda {
+        min-width: 80px;
+    }
+    
+    .boton-iniciar-sesion,
+    .btn-registrarse,
+    .boton-registrarse {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .boton-icono {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .barra-busqueda {
+        display: none;
+    }
+    
+    .nombre-marca {
+        font-size: 14px;
+    }
+    
+    .boton-iniciar-sesion,
+    .btn-registrarse,
+    .boton-registrarse {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,385 @@
+/* ===========================================
+   PÁGINA MIS CURSOS
+   =========================================== */
+
+:root {
+    --verde-completado: #16a34a;
+    --verde-progreso: #22c55e;
+    --gris-claro: #e5e7eb;
+    --gris-medio: #6b7280;
+    --gris-oscuro: #374151;
+    --gris-suave: #f9fafb;
+    --negro: #111827;
+    --blanco: #ffffff;
+    --azul-principal: #2563eb;
+}
+
+.main-mis-cursos {
+    min-height: calc(100vh - 200px);
+    padding: 40px 0 80px;
+    background: var(--blanco);
+}
+
+/* ===========================================
+   HEADER DE LA PÁGINA
+   =========================================== */
+
+.header-mis-cursos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-mis-cursos h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--negro);
+    margin: 0;
+}
+
+.btn-certificados {
+    background: var(--blanco);
+    color: var(--negro);
+    border: 2px solid var(--negro);
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-certificados:hover {
+    background: var(--negro);
+    color: var(--blanco);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================================
+   LÍNEA SEPARADORA
+   =========================================== */
+
+.linea-separadora {
+    width: 100%;
+    height: 2px;
+    background: var(--negro);
+    margin: 30px 0 40px;
+}
+
+/* ===========================================
+   GRID DE CURSOS
+   =========================================== */
+
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1000px; /* Reducido de 1200px */
+    margin: 0 auto; /* Centrado */
+}
+
+/* ===========================================
+   TARJETAS DE CURSO
+   =========================================== */
+
+.curso-card {
+    background: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.curso-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--azul-principal);
+}
+
+/* ===========================================
+   IMAGEN DEL CURSO
+   =========================================== */
+
+.imagen-curso {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen-curso-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.curso-card:hover .imagen-curso-real {
+    transform: scale(1.05);
+}
+
+/* Fallback si la imagen no carga */
+.imagen-curso-real:not([src]),
+.imagen-curso-real[src=""] {
+    background: var(--gris-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gris-medio);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.imagen-curso-real:not([src])::before,
+.imagen-curso-real[src=""]::before {
+    content: "Imagen del curso";
+}
+
+/* ===========================================
+   INFORMACIÓN DEL CURSO
+   =========================================== */
+
+.info-curso {
+    padding: 20px;
+}
+
+.titulo-curso {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--negro);
+    margin: 0 0 20px 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ===========================================
+   BARRA DE PROGRESO
+   =========================================== */
+
+.progreso-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+    background: var(--gris-claro);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progreso-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: all 0.6s ease;
+    position: relative;
+}
+
+/* Estados de progreso */
+.progreso-fill.completado {
+    background: var(--verde-completado);
+}
+
+.progreso-fill.progreso {
+    background: var(--verde-progreso);
+}
+
+.progreso-fill.inicio {
+    background: var(--verde-progreso);
+}
+
+/* Animación de llenado */
+.progreso-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.porcentaje-progreso {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--negro);
+    text-align: right;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+@media (max-width: 768px) {
+    .main-mis-cursos {
+        padding: 20px 0 60px;
+    }
+
+    .header-mis-cursos {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .header-mis-cursos h1 {
+        font-size: 28px;
+    }
+
+    .btn-certificados {
+        align-self: center;
+        width: fit-content;
+    }
+
+    .grid-cursos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .imagen-curso {
+        height: 160px;
+    }
+
+    .info-curso {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-mis-cursos h1 {
+        font-size: 24px;
+    }
+
+    .btn-certificados {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .grid-cursos {
+        gap: 16px;
+    }
+
+    .imagen-curso {
+        height: 140px;
+    }
+
+    .info-curso {
+        padding: 12px;
+    }
+
+    .titulo-curso {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+}
+
+/* ===========================================
+   ANIMACIONES DE ENTRADA
+   =========================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.curso-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.curso-card:nth-child(1) { animation-delay: 0.1s; }
+.curso-card:nth-child(2) { animation-delay: 0.2s; }
+.curso-card:nth-child(3) { animation-delay: 0.3s; }
+
+.header-mis-cursos {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+/* ===========================================
+   ESTADOS INTERACTIVOS
+   =========================================== */
+
+.curso-card:active {
+    transform: translateY(-2px);
+}
+
+.btn-certificados:active {
+    transform: translateY(0);
+}
+
+/* Efecto de carga en las barras de progreso */
+.progreso-fill {
+    animation: progressLoad 1.5s ease-out;
+}
+
+@keyframes progressLoad {
+    from {
+        width: 0 !important;
+    }
+}
+
+/* ===========================================
+   MEJORAS VISUALES
+   =========================================== */
+
+/* Sombra suave en las tarjetas */
+.curso-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Efecto de brillo en hover */
+.curso-card:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(37, 99, 235, 0.05),
+        transparent
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Indicador visual para curso completado */
+.progreso-fill.completado::before {
+    content: '✓';
+    position: absolute;
+    right: 4px;
+    top: -2px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
