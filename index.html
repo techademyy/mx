@@ -4,232 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - TechAdemy</title>
+
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
-    <header class="header-principal">
+
+<!-- ===========================
+     HEADER COMPLETO ARREGLADO
+=============================== -->
+<header class="header-principal">
     <div class="contenedor-header">
-        <!-- Logo y marca -->
+
+        <!-- Logo -->
         <a href="inicio.html" class="logo-marca">
             <img src="img/logo.jpg" alt="TechAdemy Logo" class="logo-header">
             <span class="nombre-marca">TechAdemy</span>
         </a>
 
-        <!-- Navegación principal -->
+        <!-- Barra de búsqueda -->
+        <div class="barra-busqueda">
+            <svg class="icono-busqueda" width="16" height="16" viewBox="0 0 24 24" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input type="text" class="input-busqueda" placeholder="Buscar cursos...">
+        </div>
+
+        <!-- Menú PC -->
         <nav class="navegacion-principal">
             <ul class="nav-enlaces">
-                <li class="nav-item">
-                    <a href="catalogo.html" class="nav-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                        </svg>
-                        <span>Explorar cursos</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="nosotros.html" class="nav-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                        <span>Nosotros</span>
-                    </a>
-                </li>
-               
-                <li class="nav-item">
-                    <a href="login.html" class="nav-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                        </svg>
-                        <span>Mis cursos</span>
-                    </a>
-                </li>
+                <li><a href="catalogo.html" class="nav-link">Explorar cursos</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="login.html" class="nav-link">Mis cursos</a></li>
             </ul>
-
-            <!-- Barra de búsqueda -->
-            <div class="barra-busqueda">
-                <svg class="icono-busqueda" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-                <input type="text" class="input-busqueda" placeholder="Buscar cursos...">
-            </div>
         </nav>
 
-        <!-- Botones de acción -->
+        <!-- Botones PC -->
         <div class="botones-accion">
-            <!-- Ubicación -->
             <a href="#" class="boton-icono" title="Ubicación">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" stroke-width="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                 </svg>
             </a>
 
-            <!-- Carrito -->
             <a href="login.html" class="boton-icono" title="Carrito">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="18" height="18" viewBox="0 0 24 24" stroke-width="2">
                     <circle cx="9" cy="21" r="1"></circle>
                     <circle cx="20" cy="21" r="1"></circle>
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
             </a>
 
-            <!-- Iniciar sesión -->
-            <a href="login.html" class="boton-iniciar-sesion">
-                Iniciar sesión
-            </a>
-
-            <!-- Registrarse -->
-            <a href="registro.html" class="btn-registrarse">
-                Registrarse
-            </a>
+            <a href="login.html" class="boton-iniciar-sesion">Iniciar sesión</a>
+            <a href="registro.html" class="btn-registrarse">Registrarse</a>
         </div>
 
-        <!-- Menú hamburguesa para móvil -->
-        <button class="menu-hamburguesa">
+        <!-- Botón menú móvil -->
+        <button class="menu-hamburguesa" id="btnMenuMovil">
             <span class="linea-hamburguesa"></span>
             <span class="linea-hamburguesa"></span>
             <span class="linea-hamburguesa"></span>
         </button>
+
     </div>
 </header>
-<div class="menu-movil">
-    <a class="nav-link" href="index.html">Inicio</a>
-    <a class="nav-link" href="catalogo.html">Catalogo</a>
-    <a class="nav-link" href="curso.html">Cursos</a>
-    <a class="nav-link" href="nosotros.html">Nosotros</a>
-    <a class="nav-link" href="ubicacion.html">Ubicación</a>
-</div>
-    <!-- Header -->
-    <!-- header.php (anteriormente incluido con PHP) -->
-    <!-- Si quieres, reemplaza este comentario por el contenido HTML de header.php -->
-    
-    <!-- Contenido principal -->
-    <main class="contenido-principal">
-        
-        <!-- Sección Hero -->
-        <section class="seccion-hero">
-            <div class="contenedor">
-                <div class="hero-banner">
-                    <!-- Texto lado izquierdo -->
-                    <div class="texto-banner">
-                        <h1>¡Hasta 30% de descuento para estudiantes!</h1>
-                    </div>
-                    
-                    <!-- Imagen de promociones lado derecho -->
-                    <div class="imagen-banner">
-                        <img src="img/promo2.jpg" alt="Imagen de promociones" class="imagen-hero">
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Sección: ¿Listo para impulsar tu carrera? -->
-        <section class="seccion-carreras">
-            <div class="contenedor">
-                <h2 class="titulo-seccion">¿Listo para impulsar tu carrera?</h2>
-                
-                <div class="grid-carreras">
-                    <!-- Carrera 1 -->
-                    <div class="carrera-card">
-                        <div class="carrera-imagen">
-                            <img src="img/analista.jpg" alt="Carrera 1">
-                        </div>
-                        <h3 class="carrera-titulo">Analista de sistemas</h3>
-                    </div>
-                    
-                    <!-- Carrera 2 -->
-                    <div class="carrera-card">
-                        <div class="carrera-imagen">
-                            <img src="img/cloud.jpg" alt="Carrera 2">
-                        </div>
-                        <h3 class="carrera-titulo">Especialista cloud computing</h3>
-                    </div>
-                    
-                    <!-- Curso 3 -->
-                    <div class="carrera-card">
-                        <div class="carrera-imagen">
-                            <img src="img/desarrollador.jpg" alt="Curso 3">
-                        </div>
-                        <h3 class="carrera-titulo">Desarrollador de software</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- ===========================
+     MENÚ MÓVIL
+=============================== -->
+<nav class="menu-movil" id="menuMovil">
+    <a href="inicio.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="ubicacion.html">Ubicación</a>
 
-        <!-- Sección: Los estudiantes están viendo -->
-        <section class="seccion-estudiantes">
-            <div class="contenedor">
-                <h2 class="titulo-seccion">Los estudiantes están viendo</h2>
-                
-                <div class="grid-cursos">
-                    <!-- Curso 1 -->
-                    <div class="curso-card">
-                        <div class="curso-imagen">
-                            <img src="img/python.jpg" alt="Curso 1">
-                        </div>
-                        <h3 class="curso-titulo">Curso programación en Python</h3>
-                    </div>
-                    
-                    <!-- Curso 2 -->
-                    <div class="curso-card">
-                        <div class="curso-imagen">
-                            <img src="img/javascript.jpg" alt="Curso 2">
-                        </div>
-                        <h3 class="curso-titulo">Curso programación en JavaScript</h3>
-                    </div>
-                    
-                    <!-- Curso 3 -->
-                    <div class="curso-card">
-                        <div class="curso-imagen">
-                            <img src="img/php.jpg" alt="Curso 3">
-                        </div>
-                        <h3 class="curso-titulo">Curso programación en PHP</h3>
-                    </div>
-                    
-                    <!-- Curso 4 -->
-                    <div class="curso-card">
-                        <div class="curso-imagen">
-                            <img src="img/html.jpg" alt="Curso 4">
-                        </div>
-                        <h3 class="curso-titulo">Curso programación web en HTML</h3>
-                    </div>
-                    
-                    <!-- Curso 5 -->
-                    <div class="curso-card">
-                        <div class="curso-imagen">
-                            <img src="img/aws.jpg" alt="Curso 5">
-                        </div>
-                        <h3 class="curso-titulo">Curso AWS para exámen CLF- C02</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <hr>
 
-    </main>
-    <footer>
+    <a href="login.html" class="movil-btn">Iniciar sesión</a>
+    <a href="registro.html" class="movil-btn-registrar">Registrarse</a>
+</nav>
 
-    </footer>
+<!-- Script del menú móvil -->
+<script>
+    const btnMenu = document.getElementById('btnMenuMovil');
+    const menuMovil = document.getElementById('menuMovil');
 
-    <!-- footer.php (anteriormente incluido con PHP) -->
-    <!-- Si quieres, reemplaza este comentario por el contenido HTML de footer.php -->
-
-    <link rel="stylesheet" href="footer.css">
-    <script>
-const menuBtn = document.querySelector('.menu-hamburguesa');
-const menuMovil = document.querySelector('.menu-movil');
-
-menuBtn.addEventListener('click', () => {
-    menuMovil.classList.toggle('activo');
-});
+    btnMenu.addEventListener('click', () => {
+        menuMovil.classList.toggle('activo');
+    });
 </script>
+
+
+<!-- ===========================
+     CONTENIDO PRINCIPAL
+=============================== -->
+<main class="contenido-principal">
+
+    <!-- Hero -->
+    <section class="seccion-hero">
+        <div class="contenedor">
+            <div class="hero-banner">
+                <div class="texto-banner">
+                    <h1>¡Hasta 30% de descuento para estudiantes!</h1>
+                </div>
+                
+                <div class="imagen-banner">
+                    <img src="img/promo2.jpg" alt="Imagen de promociones" class="imagen-hero">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carreras -->
+    <section class="seccion-carreras">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">¿Listo para impulsar tu carrera?</h2>
+            
+            <div class="grid-carreras">
+                <div class="carrera-card">
+                    <div class="carrera-imagen">
+                        <img src="img/analista.jpg" alt="Carrera 1">
+                    </div>
+                    <h3 class="carrera-titulo">Analista de sistemas</h3>
+                </div>
+                
+                <div class="carrera-card">
+                    <div class="carrera-imagen">
+                        <img src="img/cloud.jpg" alt="Carrera 2">
+                    </div>
+                    <h3 class="carrera-titulo">Especialista cloud computing</h3>
+                </div>
+                
+                <div class="carrera-card">
+                    <div class="carrera-imagen">
+                        <img src="img/desarrollador.jpg" alt="Curso 3">
+                    </div>
+                    <h3 class="carrera-titulo">Desarrollador de software</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estudiantes están viendo -->
+    <section class="seccion-estudiantes">
+        <div class="contenedor">
+            <h2 class="titulo-seccion">Los estudiantes están viendo</h2>
+            
+            <div class="grid-cursos">
+
+                <div class="curso-card">
+                    <div class="curso-imagen">
+                        <img src="img/python.jpg" alt="Curso 1">
+                    </div>
+                    <h3 class="curso-titulo">Curso programación en Python</h3>
+                </div>
+                
+                <div class="curso-card">
+                    <div class="curso-imagen">
+                        <img src="img/javascript.jpg" alt="Curso 2">
+                    </div>
+                    <h3 class="curso-titulo">Curso programación en JavaScript</h3>
+                </div>
+                
+                <div class="curso-card">
+                    <div class="curso-imagen">
+                        <img src="img/php.jpg" alt="Curso 3">
+                    </div>
+                    <h3 class="curso-titulo">Curso programación en PHP</h3>
+                </div>
+                
+                <div class="curso-card">
+                    <div class="curso-imagen">
+                        <img src="img/html.jpg" alt="Curso 4">
+                    </div>
+                    <h3 class="curso-titulo">Curso programación web en HTML</h3>
+                </div>
+                
+                <div class="curso-card">
+                    <div class="curso-imagen">
+                        <img src="img/aws.jpg" alt="Curso 5">
+                    </div>
+                    <h3 class="curso-titulo">Curso AWS para exámen CLF- C02</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer></footer>
+
+<link rel="stylesheet" href="footer.css">
 
 </body>
 </html>
