@@ -39,7 +39,7 @@ body {
 }
 
 .contenedor-header {
-    max-width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
@@ -48,6 +48,7 @@ body {
     height: 70px;
     gap: 20px;
 }
+
 
 /* Logo y marca */
 .logo-marca {
@@ -732,3 +733,4 @@ html, body {
 .menu-movil {
     display: none; /* Importante: oculto por defecto */
 }
+
