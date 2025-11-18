@@ -1,4 +1,6 @@
-/* Variables */
+/* ============================================
+   VARIABLES
+=============================================== */
 :root {
     --azul-principal: #2563eb;
     --azul-oscuro: #1e40af;
@@ -11,7 +13,7 @@
     --rojo-alerta: #dc2626;
 }
 
-/* Reset */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -20,16 +22,12 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden; /* Previene scroll horizontal */
-}
-@media (max-width: 768px) {
-    /* estilos para tablet + celular */
+    overflow-x: hidden;
 }
 
-@media (max-width: 480px) {
-    /* estilos para teléfonos pequeños */
-}
-/* Header principal */
+/* ============================================
+   HEADER
+=============================================== */
 .header-principal {
     background: var(--blanco);
     border-bottom: 2px solid var(--gris-claro);
@@ -38,8 +36,9 @@ body {
     z-index: 1000;
 }
 
+/* 🔥 FIX IMPORTANTE: NO 100%, SINO 1200px */
 .contenedor-header {
-    max-width: 1200px;
+    max-width: 1200px;     /* FIX */
     margin: 0 auto;
     padding: 0 16px;
     display: flex;
@@ -49,14 +48,12 @@ body {
     gap: 20px;
 }
 
-
-/* Logo y marca */
+/* LOGO */
 .logo-marca {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    flex-shrink: 0;
 }
 
 .logo-header {
@@ -73,26 +70,20 @@ body {
     white-space: nowrap;
 }
 
-/* Navegación principal */
+/* ============================================
+   NAVEGACIÓN PC
+=============================================== */
 .navegacion-principal {
     display: flex;
     align-items: center;
     gap: 8px;
     flex: 1;
-    max-width: calc(100% - 200px); /* Reserva espacio para logo y botones */
 }
 
 .nav-enlaces {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 4px;
-    flex-wrap: wrap;
-}
-
-.nav-item {
-    position: relative;
+    gap: 6px;
 }
 
 .nav-link {
@@ -103,10 +94,9 @@ body {
     color: var(--gris-medio);
     text-decoration: none;
     border-radius: 6px;
-    transition: all 0.3s ease;
     font-size: 14px;
     font-weight: 500;
-    white-space: nowrap;
+    transition: 0.3s;
 }
 
 .nav-link:hover {
@@ -114,18 +104,14 @@ body {
     color: var(--azul-principal);
 }
 
-.nav-link svg {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-}
-
-/* Barra de búsqueda */
+/* ============================================
+   BUSCADOR
+=============================================== */
 .barra-busqueda {
     position: relative;
-    max-width: 300px;
+    max-width: 280px;
     width: 100%;
-    min-width: 200px;
+    min-width: 180px;
 }
 
 .input-busqueda {
@@ -133,13 +119,10 @@ body {
     padding: 10px 16px 10px 44px;
     border: 2px solid var(--gris-claro);
     border-radius: 8px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
     background: var(--gris-suave);
 }
 
 .input-busqueda:focus {
-    outline: none;
     border-color: var(--azul-principal);
     background: var(--blanco);
 }
@@ -150,595 +133,171 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: var(--gris-medio);
-    pointer-events: none;
 }
 
-/* Botones de acción */
+/* ============================================
+   BOTONES DERECHA
+=============================================== */
 .botones-accion {
     display: flex;
-    align-items: center;
     gap: 8px;
-    flex-shrink: 0;
 }
 
 .boton-icono {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 40px;
     height: 40px;
-    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--gris-claro);
     border-radius: 8px;
+    background: transparent;
     color: var(--gris-medio);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
 }
 
 .boton-icono:hover {
     background: var(--azul-claro);
     color: var(--azul-principal);
-    border-color: var(--azul-principal);
 }
 
-/* BOTÓN INICIAR SESIÓN */
+/* Iniciar sesión */
 .boton-iniciar-sesion {
-    background: transparent;
-    color: var(--azul-principal);
     border: 2px solid var(--azul-principal);
+    color: var(--azul-principal);
     padding: 10px 16px;
     border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
     font-size: 14px;
-    white-space: nowrap;
-    font-family: 'Inter', sans-serif;
+    text-decoration: none;
 }
 
 .boton-iniciar-sesion:hover {
     background: var(--azul-principal);
     color: var(--blanco);
-    transform: translateY(-1px);
 }
 
-/* BOTÓN REGISTRARSE */
-.btn-registrarse,
-.boton-registrarse {
-    background: var(--azul-principal) !important;
-    color: var(--blanco) !important;
-    border: 2px solid var(--azul-principal);
+/* Registrarse */
+.btn-registrarse {
+    background: var(--azul-principal);
     padding: 10px 16px;
     border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none !important;
-    font-size: 14px;
-    white-space: nowrap;
-    font-family: 'Inter', sans-serif;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-registrarse:hover,
-.boton-registrarse:hover {
-    background: var(--azul-oscuro) !important;
-    color: var(--blanco) !important;
-    text-decoration: none !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.btn-registrarse:visited,
-.btn-registrarse:link,
-.btn-registrarse:active,
-.boton-registrarse:visited,
-.boton-registrarse:link,
-.boton-registrarse:active {
     color: var(--blanco) !important;
     text-decoration: none !important;
 }
 
-/* Forzar estilos del botón registrarse en header */
-.header-principal .btn-registrarse,
-.contenedor-header .btn-registrarse,
-.botones-accion .btn-registrarse {
-    background: var(--azul-principal) !important;
-    color: var(--blanco) !important;
-    text-decoration: none !important;
+.btn-registrarse:hover {
+    background: var(--azul-oscuro);
 }
 
-.header-principal .btn-registrarse:hover,
-.contenedor-header .btn-registrarse:hover,
-.botones-accion .btn-registrarse:hover {
-    background: var(--azul-oscuro) !important;
-    color: var(--blanco) !important;
-    text-decoration: none !important;
-}
-
-/* Menú móvil (hamburguesa) */
+/* ============================================
+   MENÚ MÓVIL (Hamburguesa)
+=============================================== */
 .menu-hamburguesa {
     display: none;
     flex-direction: column;
     gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
     padding: 8px;
 }
 
 .linea-hamburguesa {
-    width: 24px;
+    width: 26px;
     height: 3px;
     background: var(--gris-medio);
     border-radius: 2px;
-    transition: all 0.3s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .contenedor-header {
-        padding: 0 12px;
-        gap: 16px;
-    }
-    
-    .nav-link {
-        padding: 8px 10px;
-        font-size: 13px;
-    }
-    
-    .nombre-marca {
-        font-size: 22px;
-    }
-    
-    .barra-busqueda {
-        max-width: 250px;
-        min-width: 180px;
-    }
+/* ============================================
+   MENU DESPLEGABLE MÓVIL
+=============================================== */
+
+/* 🔥 ESTE FALTABA EN TU HEADER — ES EL QUE CORRIGE EL ESPACIO BLANCO */
+.menu-movil {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    background: var(--blanco);
+    padding: 16px;
+    width: 100%;
+    border-bottom: 2px solid var(--gris-claro);
+
+    /* FIX PARA QUE NO EMPUJE EL CONTENIDO */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
-@media (max-width: 1024px) {
-    .contenedor-header {
-        gap: 12px;
-    }
-    
-    .nav-link {
-        padding: 6px 8px;
-        font-size: 12px;
-    }
-    
-    .barra-busqueda {
-        max-width: 200px;
-        min-width: 150px;
-    }
-    
-    .boton-iniciar-sesion,
-    .btn-registrarse,
-    .boton-registrarse {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
+.menu-movil a {
+    font-size: 16px;
+    padding: 8px 0;
+    color: var(--gris-medio);
+    text-decoration: none;
 }
 
-@media (max-width: 900px) {
-    .navegacion-principal .nav-enlaces {
-        gap: 2px;
-    }
-    
-    .nav-link {
-        padding: 6px;
-        font-size: 11px;
-    }
-    
-    .nav-link span {
-        display: none; /* Oculta texto, solo muestra iconos */
-    }
-    
-    .barra-busqueda {
-        min-width: 120px;
-    }
+.menu-movil a:hover {
+    color: var(--azul-principal);
 }
 
+/* ============================================
+   RESPONSIVE
+=============================================== */
 @media (max-width: 768px) {
+
     .navegacion-principal {
         display: none;
     }
-    
+
+    .barra-busqueda {
+        max-width: 150px;
+    }
+
     .menu-hamburguesa {
         display: flex;
     }
-    
+
     .contenedor-header {
-        gap: 8px;
+        height: 65px;
+        gap: 12px;
     }
-    
+
     .nombre-marca {
         font-size: 18px;
     }
-    
+
     .logo-header {
         width: 40px;
         height: 40px;
     }
-    
-    .barra-busqueda {
-        max-width: 150px;
-        min-width: 100px;
-    }
-    
-    .input-busqueda {
-        padding: 8px 12px 8px 36px;
-        font-size: 12px;
-    }
-    
-    .boton-iniciar-sesion,
-    .btn-registrarse,
-    .boton-registrarse {
-        padding: 8px 10px;
-        font-size: 11px;
-    }
 }
 
 @media (max-width: 480px) {
+
     .contenedor-header {
-        padding: 0 8px;
+        padding: 0 10px;
         height: 60px;
     }
-    
+
+    .barra-busqueda {
+        min-width: 90px;
+    }
+
     .nombre-marca {
         font-size: 16px;
     }
-    
-    .logo-header {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .barra-busqueda {
-        min-width: 80px;
-    }
-    
-    .boton-iniciar-sesion,
-    .btn-registrarse,
-    .boton-registrarse {
+
+    .boton-iniciar-sesion {
         padding: 6px 10px;
         font-size: 11px;
     }
-    
-    .boton-icono {
-        width: 35px;
-        height: 35px;
-    }
-}
 
-/* Para pantallas muy pequeñas */
-@media (max-width: 360px) {
-    .barra-busqueda {
-        display: none;
-    }
-    
-    .nombre-marca {
-        font-size: 14px;
-    }
-    
-    .boton-iniciar-sesion,
-    .btn-registrarse,
-    .boton-registrarse {
-        padding: 6px 8px;
-        font-size: 10px;
-    }
-}
-/* ============================================================
-   FIX RESPONSIVE PARA HEADER SIN ROMPER DISEÑO DE ESCRITORIO
-   ============================================================ */
-
-/* Evitar que nada se esconda por error */
-html, body {
-    overflow-x: hidden;
-}
-
-/* Ajustes globales móviles */
-@media (max-width: 900px) {
-
-    /* Mantener texto visible en móvil */
-    .nav-link span {
-        display: inline !important; 
-    }
-
-    /* Evitar que el texto se rompa o desaparezca */
-    .nav-link {
-        white-space: nowrap !important;
-    }
-}
-
-/* Activar menú móvil real */
-@media (max-width: 768px) {
-
-    /* Ocultar navegación de escritorio */
-    .navegacion-principal {
-        display: none !important;
-    }
-
-    /* Mostrar hamburguesa */
-    .menu-hamburguesa {
-        display: flex !important;
-    }
-
-    /* Crear menú desplegable */
-    .menu-movil {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--blanco);
-        border-bottom: 2px solid var(--gris-claro);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        padding: 20px 15px;
-        z-index: 9999;
-    }
-
-    /* Cuando se active */
-    .menu-movil.activo {
-        display: flex !important;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .menu-movil .nav-link {
-        font-size: 15px !important;
-        padding: 12px !important;
-        border-radius: 8px;
-        justify-content: flex-start;
-    }
-
-    /* Ajustar el header */
-    .contenedor-header {
-        gap: 10px !important;
-        height: 65px !important;
-    }
-
-    /* Logo más pequeño */
-    .logo-header {
-        width: 38px !important;
-        height: 38px !important;
-    }
-
-    /* Mantener visible el buscador */
-    .barra-busqueda {
-        min-width: 150px !important;
-        max-width: 170px !important;
-    }
-
-    .input-busqueda {
-        font-size: 13px !important;
-        padding: 8px 12px 8px 34px !important;
-    }
-
-    /* Botones */
-    .botones-accion {
-        gap: 6px !important;
-    }
-
-    .boton-iniciar-sesion,
     .btn-registrarse {
-        padding: 8px 12px !important;
-        font-size: 12px !important;
+        padding: 6px 10px;
+        font-size: 11px;
     }
 }
 
-/* Móviles pequeños */
-@media (max-width: 480px) {
-
-    .contenedor-header {
-        height: 60px !important;
-        padding: 0 8px !important;
-    }
-
-    .logo-header {
-        width: 34px !important;
-        height: 34px !important;
-    }
-
-    .nombre-marca {
-        font-size: 17px !important;
-    }
-
-    /* Barra de búsqueda SIEMPRE visible */
-    .barra-busqueda {
-        min-width: 120px !important;
-        max-width: 130px !important;
-    }
-
-    .boton-icono {
-        width: 34px !important;
-        height: 34px !important;
-    }
-
-    .btn-registrarse,
-    .boton-iniciar-sesion {
-        font-size: 11px !important;
-        padding: 6px 10px !important;
-    }
-}
-
-/* Móviles muy pequeños (<360px) */
 @media (max-width: 360px) {
-
-    /* Antes estabas ocultando el buscador: SE RESTAURA */
     .barra-busqueda {
-        display: block !important;
-        min-width: 100px !important;
-    }
-
-    .nombre-marca {
-        font-size: 15px !important;
-    }
-
-    .btn-registrarse,
-    .boton-iniciar-sesion {
-        font-size: 10px !important;
-        padding: 5px 8px !important;
-    }
-}
-/* ============================================================
-   FIX RESPONSIVE PARA HEADER (SIN INICIAR SESIÓN)
-   ============================================================ */
-
-/* Evitar problemas de desbordes */
-html, body {
-    overflow-x: hidden;
-}
-
-/* ====== TABLET (900px - 768px) ====== */
-@media (max-width: 900px) {
-
-    /* Mantener nombres visibles */
-    .nav-link span {
-        display: inline !important;
-    }
-
-    /* Evitar que el texto desaparezca en íconos */
-    .nav-link {
-        white-space: nowrap !important;
-    }
-
-    /* Asegurar buen tamaño del buscador */
-    .barra-busqueda {
-        min-width: 150px !important;
-    }
-}
-
-/* ====== MÓVIL (<=768px) ====== */
-@media (max-width: 768px) {
-
-    /* Navegación de escritorio se oculta */
-    .navegacion-principal {
-        display: none !important;
-    }
-
-    /* Mostrar botón hamburguesa */
-    .menu-hamburguesa {
-        display: flex !important;
-    }
-
-    /* CONTENEDOR DEL MENÚ MÓVIL */
-    .menu-movil {
         display: none;
-        flex-direction: column;
-        gap: 14px;
-        background: var(--blanco);
-        border-bottom: 2px solid var(--gris-claro);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        padding: 20px 15px;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        z-index: 99999;
-    }
-
-    .menu-movil.activo {
-        display: flex !important;
-    }
-
-    /* Estilo enlaces dentro del menú móvil */
-    .menu-movil .nav-link {
-        padding: 12px !important;
-        border-radius: 8px;
-        font-size: 15px !important;
-        justify-content: flex-start !important;
-    }
-
-    /* Ajustes del header */
-    .contenedor-header {
-        height: 65px !important;
-        gap: 10px !important;
-    }
-
-    .logo-header {
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-    /* Buscador */
-    .barra-busqueda {
-        max-width: 150px !important;
-    }
-
-    .input-busqueda {
-        padding: 8px 12px 8px 36px !important;
-    }
-
-    /* Botones */
-    .boton-iniciar-sesion,
-    .btn-registrarse,
-    .boton-registrarse {
-        padding: 8px 12px !important;
-        font-size: 12px !important;
     }
 }
-
-/* ====== MÓVIL PEQUEÑO (<=480px) ====== */
-@media (max-width: 480px) {
-
-    .contenedor-header {
-        height: 60px !important;
-        padding: 0 6px !important;
-    }
-
-    .logo-header {
-        width: 34px !important;
-        height: 34px !important;
-    }
-
-    .nombre-marca {
-        font-size: 16px !important;
-    }
-
-    /* Mantener buscador visible */
-    .barra-busqueda {
-        min-width: 100px !important;
-        max-width: 120px !important;
-    }
-
-    /* Botones */
-    .boton-icono {
-        width: 34px !important;
-        height: 34px !important;
-    }
-
-    .boton-iniciar-sesion,
-    .btn-registrarse {
-        font-size: 11px !important;
-        padding: 6px 10px !important;
-    }
-}
-
-/* ====== EXTRA PEQUEÑO (<=360px) ====== */
-@media (max-width: 360px) {
-
-    .barra-busqueda {
-        min-width: 90px !important;
-    }
-
-    .nombre-marca {
-        font-size: 14px !important;
-    }
-}
-.menu-movil {
-    display: none;
-    position: absolute;
-    top: 70px;      /* justo abajo del header */
-    left: 0;
-    right: 0;
-    background: var(--blanco);
-    z-index: 9999;
-}
-
-
-
