@@ -731,6 +731,14 @@ html, body {
     }
 }
 .menu-movil {
-    display: none; /* Importante: oculto por defecto */
+    display: none;
+    position: absolute;
+    top: 70px;      /* justo abajo del header */
+    left: 0;
+    right: 0;
+    background: var(--blanco);
+    z-index: 9999;
 }
+
+
 
