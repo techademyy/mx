@@ -301,3 +301,48 @@ body {
         display: none;
     }
 }
+.menu-movil {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    border-top: 2px solid var(--gris-claro);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    z-index: 900;
+}
+
+.menu-movil a {
+    padding: 14px 0;
+    color: var(--negro);
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-movil a:last-child {
+    border-bottom: none;
+}
+
+.menu-movil.activo {
+    display: flex;
+}
+
+.movil-btn {
+    color: var(--azul-principal);
+    font-weight: 600;
+}
+
+.movil-btn-registrar {
+    color: white;
+    background-color: var(--azul-principal);
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+}
