@@ -22,7 +22,13 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden; /* Previene scroll horizontal */
 }
+@media (max-width: 768px) {
+    /* estilos para tablet + celular */
+}
 
+@media (max-width: 480px) {
+    /* estilos para teléfonos pequeños */
+}
 /* Header principal */
 .header-principal {
     background: var(--blanco);
@@ -424,4 +430,305 @@ body {
         padding: 6px 8px;
         font-size: 10px;
     }
+}
+/* ============================================================
+   FIX RESPONSIVE PARA HEADER SIN ROMPER DISEÑO DE ESCRITORIO
+   ============================================================ */
+
+/* Evitar que nada se esconda por error */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Ajustes globales móviles */
+@media (max-width: 900px) {
+
+    /* Mantener texto visible en móvil */
+    .nav-link span {
+        display: inline !important; 
+    }
+
+    /* Evitar que el texto se rompa o desaparezca */
+    .nav-link {
+        white-space: nowrap !important;
+    }
+}
+
+/* Activar menú móvil real */
+@media (max-width: 768px) {
+
+    /* Ocultar navegación de escritorio */
+    .navegacion-principal {
+        display: none !important;
+    }
+
+    /* Mostrar hamburguesa */
+    .menu-hamburguesa {
+        display: flex !important;
+    }
+
+    /* Crear menú desplegable */
+    .menu-movil {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--blanco);
+        border-bottom: 2px solid var(--gris-claro);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        padding: 20px 15px;
+        z-index: 9999;
+    }
+
+    /* Cuando se active */
+    .menu-movil.activo {
+        display: flex !important;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .menu-movil .nav-link {
+        font-size: 15px !important;
+        padding: 12px !important;
+        border-radius: 8px;
+        justify-content: flex-start;
+    }
+
+    /* Ajustar el header */
+    .contenedor-header {
+        gap: 10px !important;
+        height: 65px !important;
+    }
+
+    /* Logo más pequeño */
+    .logo-header {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    /* Mantener visible el buscador */
+    .barra-busqueda {
+        min-width: 150px !important;
+        max-width: 170px !important;
+    }
+
+    .input-busqueda {
+        font-size: 13px !important;
+        padding: 8px 12px 8px 34px !important;
+    }
+
+    /* Botones */
+    .botones-accion {
+        gap: 6px !important;
+    }
+
+    .boton-iniciar-sesion,
+    .btn-registrarse {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+
+    .contenedor-header {
+        height: 60px !important;
+        padding: 0 8px !important;
+    }
+
+    .logo-header {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .nombre-marca {
+        font-size: 17px !important;
+    }
+
+    /* Barra de búsqueda SIEMPRE visible */
+    .barra-busqueda {
+        min-width: 120px !important;
+        max-width: 130px !important;
+    }
+
+    .boton-icono {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .btn-registrarse,
+    .boton-iniciar-sesion {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+    }
+}
+
+/* Móviles muy pequeños (<360px) */
+@media (max-width: 360px) {
+
+    /* Antes estabas ocultando el buscador: SE RESTAURA */
+    .barra-busqueda {
+        display: block !important;
+        min-width: 100px !important;
+    }
+
+    .nombre-marca {
+        font-size: 15px !important;
+    }
+
+    .btn-registrarse,
+    .boton-iniciar-sesion {
+        font-size: 10px !important;
+        padding: 5px 8px !important;
+    }
+}
+/* ============================================================
+   FIX RESPONSIVE PARA HEADER (SIN INICIAR SESIÓN)
+   ============================================================ */
+
+/* Evitar problemas de desbordes */
+html, body {
+    overflow-x: hidden;
+}
+
+/* ====== TABLET (900px - 768px) ====== */
+@media (max-width: 900px) {
+
+    /* Mantener nombres visibles */
+    .nav-link span {
+        display: inline !important;
+    }
+
+    /* Evitar que el texto desaparezca en íconos */
+    .nav-link {
+        white-space: nowrap !important;
+    }
+
+    /* Asegurar buen tamaño del buscador */
+    .barra-busqueda {
+        min-width: 150px !important;
+    }
+}
+
+/* ====== MÓVIL (<=768px) ====== */
+@media (max-width: 768px) {
+
+    /* Navegación de escritorio se oculta */
+    .navegacion-principal {
+        display: none !important;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .menu-hamburguesa {
+        display: flex !important;
+    }
+
+    /* CONTENEDOR DEL MENÚ MÓVIL */
+    .menu-movil {
+        display: none;
+        flex-direction: column;
+        gap: 14px;
+        background: var(--blanco);
+        border-bottom: 2px solid var(--gris-claro);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        padding: 20px 15px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        z-index: 99999;
+    }
+
+    .menu-movil.activo {
+        display: flex !important;
+    }
+
+    /* Estilo enlaces dentro del menú móvil */
+    .menu-movil .nav-link {
+        padding: 12px !important;
+        border-radius: 8px;
+        font-size: 15px !important;
+        justify-content: flex-start !important;
+    }
+
+    /* Ajustes del header */
+    .contenedor-header {
+        height: 65px !important;
+        gap: 10px !important;
+    }
+
+    .logo-header {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* Buscador */
+    .barra-busqueda {
+        max-width: 150px !important;
+    }
+
+    .input-busqueda {
+        padding: 8px 12px 8px 36px !important;
+    }
+
+    /* Botones */
+    .boton-iniciar-sesion,
+    .btn-registrarse,
+    .boton-registrarse {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* ====== MÓVIL PEQUEÑO (<=480px) ====== */
+@media (max-width: 480px) {
+
+    .contenedor-header {
+        height: 60px !important;
+        padding: 0 6px !important;
+    }
+
+    .logo-header {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .nombre-marca {
+        font-size: 16px !important;
+    }
+
+    /* Mantener buscador visible */
+    .barra-busqueda {
+        min-width: 100px !important;
+        max-width: 120px !important;
+    }
+
+    /* Botones */
+    .boton-icono {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .boton-iniciar-sesion,
+    .btn-registrarse {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+    }
+}
+
+/* ====== EXTRA PEQUEÑO (<=360px) ====== */
+@media (max-width: 360px) {
+
+    .barra-busqueda {
+        min-width: 90px !important;
+    }
+
+    .nombre-marca {
+        font-size: 14px !important;
+    }
+}
+.menu-movil {
+    display: none; /* Importante: oculto por defecto */
 }
