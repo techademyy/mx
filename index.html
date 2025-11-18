@@ -100,6 +100,13 @@
         </button>
     </div>
 </header>
+<div class="menu-movil">
+    <a class="nav-link" href="index.html">Inicio</a>
+    <a class="nav-link" href="catalogo.html">Catalogo</a>
+    <a class="nav-link" href="curso.html">Cursos</a>
+    <a class="nav-link" href="nosotros.html">Nosotros</a>
+    <a class="nav-link" href="ubicacion.html">Ubicación</a>
+</div>
     <!-- Header -->
     <!-- header.php (anteriormente incluido con PHP) -->
     <!-- Si quieres, reemplaza este comentario por el contenido HTML de header.php -->
@@ -215,5 +222,14 @@
     <!-- Si quieres, reemplaza este comentario por el contenido HTML de footer.php -->
 
     <link rel="stylesheet" href="footer.css">
+    <script>
+const menuBtn = document.querySelector('.menu-hamburguesa');
+const menuMovil = document.querySelector('.menu-movil');
+
+menuBtn.addEventListener('click', () => {
+    menuMovil.classList.toggle('activo');
+});
+</script>
+
 </body>
 </html>
